@@ -62,3 +62,13 @@
 a {
   text-decoration: none;
 }
+
+.foto-avatar {
+  position: relative;
+}
+
+.foto-avatar ion-fab {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}

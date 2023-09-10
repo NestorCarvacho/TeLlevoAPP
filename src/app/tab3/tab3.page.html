@@ -10,8 +10,14 @@
     <section>
         <ion-item>
             <ion-avatar slot="start" class="foto-avatar">
+                <ion-fab>
+                <ion-fab-button (click)="selectFile()">
+                        <ion-icon name="add"></ion-icon>
+                </ion-fab-button>
+                </ion-fab>
                 <img alt="Silhouette of a person's head" src="../../../assets/core/img/Alan.jpg"/>
             </ion-avatar>
+            <input type="file" #fileInput style="display:none" (change)="onFileSelected($event)">
         </ion-item>
         <ion-item>
             <ion-list-header class="informacion-basica">

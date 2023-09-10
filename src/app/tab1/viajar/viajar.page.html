@@ -6,17 +6,17 @@
     </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" scrollY="true">
-    <ion-item style="display: grid">
-        <div class="row">
+<ion-content [fullscreen]="true" scrollY="true" >
+    <ion-item>
+        <div class="row" style="padding: 5%;">
             <div class="col col-6 ">
                 <a [routerLink]="['/tabs/tab1']">
                     <ion-icon name="speedometer-outline"></ion-icon>
                     Soy Pasajero</a>
             </div>
-            <div class="col col-6">
+            <div class="col col-6" >
                 <a [routerLink]="['/tabs/tab1/viajar']" class="btn btn-primary botonDetalles">publicar Viaje</a>
-            </div>
+            </div> 
         </div>
     </ion-item>
     <ion-item class="googleIFrame" once="menu" id="menu1-0" data-sortbtn="btn-primary">

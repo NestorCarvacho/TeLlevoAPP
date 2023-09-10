@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-item>
+      <ion-avatar slot="start">
+        <img [routerLink]="['/tabs/tab3']" alt="Silhouette of a person's head" src="../../../assets/core/img/Alan.jpg" />
+      </ion-avatar>
+      <ion-label>Alan gajardo</ion-label>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list lines="none">
+    <ion-item class="boton-perfil">
+      <ion-icon name="ellipsis-horizontal-circle-outline" style="padding: 2%;"></ion-icon> 
+      <ion-label [routerLink]="['/tabs/tab3']"> Configuración</ion-label>
+    </ion-item>
+    <ion-item class="boton-perfil">
+      <ion-icon name="mail-open-outline" style="padding: 2%;"></ion-icon> 
+      <ion-label [routerLink]="['/tabs/tab3']"> Mensajes</ion-label>
+    </ion-item>
+    <ion-item class="boton-perfil">
+      <ion-icon name="settings-outline" style="padding: 2%;"></ion-icon> 
+      <ion-label [routerLink]="['/tabs/tab3']"> Administrar cuenta</ion-label>
+    </ion-item>
+    <ion-item class="boton-perfil">
+      <ion-icon name="car-outline" style="padding: 2%;"></ion-icon> 
+      <ion-label [routerLink]="['/tabs/tab3']"> Administrar vehículos</ion-label>
+    </ion-item>
+    <ion-item class="boton-perfil">
+      <ion-icon name="information-outline" style="padding: 2%;"></ion-icon> 
+      <ion-label [routerLink]="['/tabs/tab3']"> Términos y servicios</ion-label>
+    </ion-item>
+    <ion-item class="boton-perfil">
+      <ion-icon name="shield-checkmark-outline" style="padding: 2%;"></ion-icon> 
+      <ion-label [routerLink]="['/tabs/tab3']"> Ayuda</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

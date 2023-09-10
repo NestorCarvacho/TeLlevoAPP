@@ -1,11 +1,15 @@
 <ion-header [translucent]="true">
     <ion-toolbar>
-        <ion-title>
-            Mis Viajes
-        </ion-title>
+    <ion-title style="font-weight: bold;">Mis viajes</ion-title>
     </ion-toolbar>
+    <ion-toolbar>
+    <ion-searchbar placeholder="Buscar viaje"></ion-searchbar>
+  </ion-toolbar>
 </ion-header>
 
+<ion-header>
+  
+</ion-header>
 
 <ion-content [fullscreen]="true" scrollY="true" style="margin-bottom: 200px;">
     <ion-item>
@@ -14,7 +18,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col col-6 nombreAppCard">Te Llevo</div>
-                        <div class="col col-6 fechaCard">fecha culia</div>
+                        <div class="col col-6 fechaCard">Fecha</div>
                         <div class="col col-12">
                             <div class="row">
                                 <div class="col col-2">
@@ -46,7 +50,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-6 nombreAppCard">Te Llevo</div>
-                        <div class="col-6 fechaCard">fecha culia</div>
+                        <div class="col-6 fechaCard">Fecha</div>
                         <div class="col-12">
                             <div class="row">
                                 <div class="col-2">
@@ -78,7 +82,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-6 nombreAppCard">Te Llevo</div>
-                        <div class="col-6 fechaCard">fecha culia</div>
+                        <div class="col-6 fechaCard">Fecha</div>
                         <div class="col-12">
                             <div class="row">
                                 <div class="col-2">
@@ -110,7 +114,39 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-6 nombreAppCard">Te Llevo</div>
-                        <div class="col-6 fechaCard">fecha culia</div>
+                        <div class="col-6 fechaCard">Fecha</div>
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-2">
+                                    <div id="puntoViaje"></div>
+                                    <div id="puntoViaje2"></div>
+                                </div>
+                                <div class="col-10 DireccionCard">Avenida Concha Y Toro, Av. San Carlos 1340, Puente Alto, Región Metropolitana
+
+                                </div>
+                                <div class="col-2">
+                                    <div id="puntoViaje3"></div>
+                                </div>
+                                <div class="col-10 DireccionCard">Avenida Concha Y Toro, Av. San Carlos 1340, Puente Alto, Región Metropolitana
+
+                                </div>
+                            </div>
+                        </div>ww
+                        <div class="col-12">
+                            <a [routerLink]="['/tabs/tab2/detalle-viajes']" class="btn btn-primary botonDetalles">Ver detalles</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-item>
+    <ion-item>
+        <div class="cardviajes">
+            <div class="card">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6 nombreAppCard">Te Llevo</div>
+                        <div class="col-6 fechaCard">Fecha</div>
                         <div class="col-12">
                             <div class="row">
                                 <div class="col-2">
@@ -142,39 +178,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-6 nombreAppCard">Te Llevo</div>
-                        <div class="col-6 fechaCard">fecha culia</div>
-                        <div class="col-12">
-                            <div class="row">
-                                <div class="col-2">
-                                    <div id="puntoViaje"></div>
-                                    <div id="puntoViaje2"></div>
-                                </div>
-                                <div class="col-10 DireccionCard">Avenida Concha Y Toro, Av. San Carlos 1340, Puente Alto, Región Metropolitana
-
-                                </div>
-                                <div class="col-2">
-                                    <div id="puntoViaje3"></div>
-                                </div>
-                                <div class="col-10 DireccionCard">Avenida Concha Y Toro, Av. San Carlos 1340, Puente Alto, Región Metropolitana
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <a [routerLink]="['/tabs/tab2/detalle-viajes']" class="btn btn-primary botonDetalles">Ver detalles</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </ion-item>
-    <ion-item>
-        <div class="cardviajes">
-            <div class="card">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-6 nombreAppCard">Te Llevo</div>
-                        <div class="col-6 fechaCard">fecha culia</div>
+                        <div class="col-6 fechaCard">Fecha</div>
                         <div class="col-12">
                             <div class="row">
                                 <div class="col-2">
