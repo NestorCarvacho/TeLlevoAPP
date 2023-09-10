@@ -7,19 +7,21 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" scrollY="true">
+    <ion-item>
+        <a [routerLink]="['/tabs/tab1/manejar']"><ion-icon name="speedometer-outline" ></ion-icon> Majenar</a>
+    </ion-item>
     <ion-item class="googleIFrame" once="menu" id="menu1-0" data-sortbtn="btn-primary">
-
         <ion-img src="../../assets/core/img/programacion-2-e1551291144973.jpg"></ion-img>
     </ion-item>
     <ion-item>
         <div class="row">
-            <div class="col-12">
+            <div class="col lcol-12">
                 <h3>Solicita un nuevo viaje</h3>
             </div>
-            <div class="col-12">
+            <div class="col col-12">
                 <ion-input label="Inicio" label-placement="floating" fill="outline" placeholder="Ingrese Inicio"></ion-input>
             </div>
-            <div class="col-12">
+            <div class="col col-12">
                 <ion-input label="Destino" label-placement="floating" fill="outline" placeholder="Ingrese destino"></ion-input>
             </div>
         </div>

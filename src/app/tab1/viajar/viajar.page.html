@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-title>
+            Nuevo Viaje
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" scrollY="true">
+    <ion-item style="display: grid">
+        <div class="row">
+            <div class="col col-6 ">
+                <a [routerLink]="['/tabs/tab1']">
+                    <ion-icon name="speedometer-outline"></ion-icon>
+                    Soy Pasajero</a>
+            </div>
+            <div class="col col-6">
+                <a [routerLink]="['/tabs/tab1/viajar']" class="btn btn-primary botonDetalles">publicar Viaje</a>
+            </div>
+        </div>
+    </ion-item>
+    <ion-item class="googleIFrame" once="menu" id="menu1-0" data-sortbtn="btn-primary">
+        <ion-img src="../../assets/core/img/programacion-2-e1551291144973.jpg"></ion-img>
+    </ion-item>
+    <ion-item>
+        <div class="row">
+            <div class="col col-12">
+                <h3>Publicar Viaje Disponible</h3>
+            </div>
+            <div class="col col-12">
+                <ion-input label="Destino" label-placement="floating" fill="outline" placeholder="Ingrese Destino"></ion-input>
+            </div>
+        </div>
+    </ion-item>
+</ion-content>

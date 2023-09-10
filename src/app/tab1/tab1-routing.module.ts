@@ -6,6 +6,14 @@ const routes: Routes = [
   {
     path: '',
     component: Tab1Page,
+  },
+  {
+    path: 'manejar',
+    loadChildren: () => import('./manejar/manejar.module').then( m => m.ManejarPageModule)
+  },
+  {
+    path: 'viajar',
+    loadChildren: () => import('./viajar/viajar.module').then( m => m.ViajarPageModule)
   }
 ];
 
