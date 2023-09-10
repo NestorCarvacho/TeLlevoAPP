@@ -1,0 +1,63 @@
+.cardviajes {
+  margin: auto; /* Establece los márgenes automáticos para centrar horizontal y verticalmente */
+  top: 0;
+  bottom: 0; /* Alinea verticalmente en el centro */
+  left: 0;
+  right: 0; /* Alinea horizontalmente en el centro */
+  width: 300px;
+  margin-top: 10px;
+}
+
+.fechaCard {
+  color: grey;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: right;
+  align-items: end;
+  font-size: 80%;
+}
+
+.nombreAppCard {
+  text-align: left;
+  align-items: start;
+  font-size: 80%;
+}
+
+#puntoViaje {
+  background-color: rgb(0, 0, 0);
+  border-radius: 50%;
+  height: 10px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  width: 10px;
+}
+
+#puntoViaje2 {
+  background-color: rgb(0, 0, 0);
+  height: 40px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  width: 10px;
+}
+
+#puntoViaje3 {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 10px solid rgb(0, 0, 0); /* Elige el color que desees */
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.DireccionCard {
+  font-size: 80%;
+}
+
+.botonDetalles {
+  font-size: 80%;
+  margin:10px;
+  padding: 10px;
+  float: right;
+}

@@ -1,0 +1,7 @@
+{
+  "name": "TeLlevoAPPTabs",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

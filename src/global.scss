@@ -1,0 +1,62 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import '@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+// @import url("/src/assets/theme/css/style.css");
+
+// @import url("/src/assets/core/css/animatecss/animate.css");
+
+// @import url("/src/assets/core/css/assets/bootstrap-grid.min.css");
+// @import url("/src/assets/core/css/assets/bootstrap-reboot.min.css");
+// @import url("/src/assets/core/css/assets/bootstrap.min.css");
+// @import url("/src/assets/core/css/assets/formulario.css");
+// @import url("/src/assets/core/css/assets/style_icons.css");
+// @import url("/src/assets/core/css/assets/tether.min.css");
+
+// @import url("/src/assets/core/css/datepicker/jquery.datetimepicker.min.css");
+
+// @import url("/src/assets/core/css/dropdown/style.css");
+
+// @import url("/src/assets/core/css/formstyler/jquery.formstyler.css");
+// @import url("/src/assets/core/css/formstyler/jquery.formstyler.theme.css");
+
+// @import url("/src/assets/core/css/tienda/bootstrap.min.css");
+// @import url("/src/assets/core/css/tienda/custom.css");
+// @import url("/src/assets/core/css/tienda/fontawesome.css");
+// @import url("/src/assets/core/css/tienda/fontawesome.min.css");
+// @import url("/src/assets/core/css/tienda/slick-theme.css");
+// @import url("/src/assets/core/css/tienda/slick-theme.min.css");
+// @import url("/src/assets/core/css/tienda/slick.min.css");
+// // @import url("/src/assets/core/css/tienda/templatemo.css");
+// // @import url("/src/assets/core/css/tienda/templatemo.min.css");
+
+// @import url("/src/assets/mobirise/css/mbr-additional.css");
+
+@import url("https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css");
+
+// @import url("/src/assets/styleCustom.css");
+
+// @import url("/src/assets/as-pie-progress/css/progress.min.css");
