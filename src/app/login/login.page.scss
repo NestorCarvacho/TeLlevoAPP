@@ -1,0 +1,31 @@
+// @font-face {
+//   font-family: DuocFont;
+//   src: url("../../../assets/core/webfont/duoc/Lato-Black.ttf")
+//     format("truetype");
+// }
+
+.fondoLogin{
+//     // --background: url("../../assets/core/img/logoApp2.png") 0/100% 100%;
+background: rgb(191, 192, 192);
+  }
+
+.formularioLogin {
+  text-align: center;
+//   background: rgba(0, 0, 0, 0.8);
+  padding: 20px; // Agrega espaciado interior según tus necesidades
+  border-radius: 10px;
+  width: 300px;
+  margin: auto;
+  margin-top: 50px;
+  align-items: justify;
+}
+
+.NoPoseeCuentaClick {
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+// .login-form{
+//     border: 2px solid blue;
+//     border-radius: 10%;
+// }

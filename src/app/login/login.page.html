@@ -1,0 +1,26 @@
+<ion-content>
+  <div>
+      <form class="formularioLogin" #loginForm>
+          <ion-img src="../../assets/core/img/logoApp.png" style="height: 200px;"></ion-img>
+          <br>
+          <br>
+          <br>
+          <div>
+            <ion-input class="login-form" label="Correo" type="mail" labelPlacement="stacked" fill="solid" placeholder="Correo@duocuc.cl" ></ion-input>
+          </div>
+          <br>
+          <div>
+            <ion-input class="login-form" label="Contraseña" type="password" labelPlacement="stacked" fill="solid" placeholder="***********"></ion-input>
+          </div>
+          <br>
+          <!-- estos se usan para cuando se valida el login -->
+          <!-- type="submit" [disabled]="!loginForm['valid']" -->
+          <ion-button  (click)="inicioSesionFalso()" >Iniciar Sesión</ion-button>
+
+          <div style="margin-top: 20px;">
+            No tienes cuenta?
+            <a class="NoPoseeCuentaClick" style="color: #D50032; font-family: lato-bold;" (click)="handleClick()">Click Acá</a>
+          </div>
+      </form>
+  </div>
+</ion-content>

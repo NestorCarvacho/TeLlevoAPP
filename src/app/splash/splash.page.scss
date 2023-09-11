@@ -1,0 +1,73 @@
+.fondoSplash {
+    --background: url("../../assets/core/img/logoApp2.png") 0/100% 100%;
+  }
+  
+  .loader {
+    position: relative;
+    top: calc(50% - 50px);
+    left: calc(50% - 50px);
+    width: 100px;
+    height: 100px;
+    border: 2px #0000007a;
+    border-bottom: 5px solid #ffb800;
+    border-radius: 50%;
+    animation: animate 3s linear infinite;
+  }
+  
+  .loader:before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    bottom: 10px;
+    right: 10px;
+    border: 2px #0000007a;
+    border-bottom: 5px solid #307fe2;
+    border-radius: 50%;
+    animation: animate 2s linear infinite;
+  }
+  
+  .loader:after {
+    content: "";
+    position: absolute;
+    top: 22px;
+    left: 22px;
+    bottom: 22px;
+    right: 22px;
+    border: 2px #0000007a;
+    border-bottom: 5px solid #ff585d;
+    border-radius: 50%;
+    animation: animate 1s linear infinite;
+  }
+  
+  @keyframes animate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .cargando::after{
+      content: 'cargando..';
+      font-size: x-large;
+      color: black;
+      animation:  dots 1s linear infinite ;
+  }
+  
+  @keyframes dots {
+    0% {
+      content: "Cargando";
+    }
+    33% {
+      content: "Cargando.";
+    }
+    66% {
+      content: "Cargando..";
+    }
+    100% {
+      content: "Cargando...";
+    }
+  }
+  
