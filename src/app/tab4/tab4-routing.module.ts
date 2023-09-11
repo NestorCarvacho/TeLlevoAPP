@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: Tab4Page
+  },
+  {
+    path: 'configuracion',
+    loadChildren: () => import('./configuracion/configuracion.module').then( m => m.ConfiguracionPageModule)
   }
 ];
 
