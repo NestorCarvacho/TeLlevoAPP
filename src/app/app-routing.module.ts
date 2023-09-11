@@ -8,7 +8,7 @@ const routes: Routes = [
   //     import('./splash/splash.module').then((m) => m.SplashPageModule),
   // },
   {
-    path: 'splash',
+    path: '',
     loadChildren: () =>
       import('./splash/splash.module').then((m) => m.SplashPageModule),
   },
@@ -18,12 +18,12 @@ const routes: Routes = [
       import('./login/login.module').then((m) => m.LoginPageModule),
   },
   {
-    path: 'tabs',
+    path: '',
     loadChildren: () =>
       import('./tabs/tabs.module').then((m) => m.TabsPageModule),
   },
   {
-    path: '',
+    path: 'splash',
     redirectTo: 'splash',
     pathMatch: 'full',
   },
