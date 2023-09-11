@@ -2,11 +2,6 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  // {
-  //   path: '',
-  //   loadChildren: () =>
-  //     import('./splash/splash.module').then((m) => m.SplashPageModule),
-  // },
   {
     path: '',
     loadChildren: () =>
@@ -27,11 +22,12 @@ const routes: Routes = [
     redirectTo: 'splash',
     pathMatch: 'full',
   },
+
 ];
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
   ],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
 export class AppRoutingModule {}
