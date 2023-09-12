@@ -12,4 +12,6 @@ export class Tab4Page implements OnInit {
   ngOnInit() {
   }
 
+  imagenPerfil: string = 'https://ionicframework.com/docs/img/demos/avatar.svg';
+
 }

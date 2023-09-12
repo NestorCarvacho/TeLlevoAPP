@@ -15,9 +15,9 @@
                         <ion-icon name="add"></ion-icon>
                 </ion-fab-button>
                 </ion-fab>
-                <img alt="Silhouette of a person's head" src="../../../assets/core/img/Alan.jpg"/>
+                <img alt="Silhouette of a person's head" [src]="imagenPerfil"/>
             </ion-avatar>
-            <input type="file" #fileInput style="display:none" (change)="onFileSelected($event)">
+            <input type="file" #fileInput style="display:none" (change)="cargarNuevaImagen($event)">
         </ion-item>
         <ion-item>
             <ion-list-header class="informacion-basica">
