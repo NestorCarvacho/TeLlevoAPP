@@ -11,5 +11,6 @@ export class EditarNombrePage implements OnInit {
 
   ngOnInit() {
   }
+  
 
 }
