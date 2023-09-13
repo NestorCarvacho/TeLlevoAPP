@@ -1,0 +1,36 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Ingresar Vehículo</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <form (ngSubmit)="guardarVehiculo()">
+        <ion-item>
+            <ion-label position="floating">Patente</ion-label>
+            <ion-input [(ngModel)]="patente" name="patente" required="required"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Marca</ion-label>
+          <ion-input [(ngModel)]="marca" name="marca" required="required"></ion-input>
+      </ion-item>
+        <ion-item>
+            <ion-label position="floating">Modelo</ion-label>
+            <ion-input [(ngModel)]="modelo" name="modelo" required="required"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="stacked">Permiso de Circulación</ion-label>
+            <ion-input class="seleccion-archivo" type="file" (change)="onFileSelected($event)" required="required"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label position="stacked">Seguro Obligatorio</ion-label>
+            <ion-input class="seleccion-archivo" type="file" (change)="onFileSelected($event)" required="required"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="stacked">Certificado de Antecedentes</ion-label>
+            <ion-input class="seleccion-archivo" type="file" (change)="onFileSelected($event)" required="required"></ion-input>
+        </ion-item>
+        <ion-button type="submit" expand="full">Guardar</ion-button>
+    </form>
+</ion-content>
