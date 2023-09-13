@@ -14,7 +14,15 @@ const routes: Routes = [
   {
     path: 'viajar',
     loadChildren: () => import('./viajar/viajar.module').then( m => m.ViajarPageModule)
+  },  {
+    path: 'en-viaje',
+    loadChildren: () => import('./en-viaje/en-viaje.module').then( m => m.EnViajePageModule)
+  },
+  {
+    path: 'en-viaje-pasajero',
+    loadChildren: () => import('./en-viaje-pasajero/en-viaje-pasajero.module').then( m => m.EnViajePasajeroPageModule)
   }
+
 ];
 
 @NgModule({
