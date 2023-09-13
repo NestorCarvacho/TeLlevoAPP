@@ -20,7 +20,12 @@ const routes: Routes = [
 
     path: 'administrar-vehiculos',
     loadChildren: () => import('./administrar-vehiculos/administrar-vehiculos.module').then( m => m.AdministrarVehiculosPageModule)
+  },
+  {
+    path: 'ayudaviajes',
+    loadChildren: () => import('./ayudaviajes/ayudaviajes.module').then( m => m.AyudaviajesPageModule)
   }
+
 
 ];
 

@@ -1,0 +1,50 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-item>
+      <a [routerLink]="['/tabs/tab4']" class="linkBack">
+        <h4><ion-icon name="arrow-back-outline"></ion-icon> Ayuda con viajes</h4></a>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">ayudaviajes</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+  <ion-card>
+    <ion-item class="googleIFrame" once="menu" id="menu1-0" data-sortbtn="btn-primary" >
+      <ion-img src="../../assets/core/img/programacion-2-e1551291144973.jpg"></ion-img>
+    </ion-item>
+    <ion-card-header>
+      <ion-card-title>Fecha viaje: 11-09-2023 14:15 hrs.</ion-card-title>
+      <ion-card-subtitle>Método de pago: Efectivo</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Recorrido viaje: INICIO: Calle falsa #123 TÉRMINO: Calle falsa 321
+    </ion-card-content>
+    <ion-button expand="block" color="danger">Ayuda con este viaje</ion-button>
+  </ion-card>
+
+  <ion-card>
+    <ion-item class="googleIFrame" once="menu" id="menu1-0" data-sortbtn="btn-primary" >
+      <ion-img src="../../assets/core/img/programacion-2-e1551291144973.jpg"></ion-img>
+    </ion-item>
+    <ion-card-header>
+      <ion-card-title>Fecha viaje: 10-09-2023 19:32 hrs.</ion-card-title>
+      <ion-card-subtitle>Método de pago: Efectivo</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Recorrido viaje: INICIO: Calle falsa #123 TÉRMINO: Calle falsa 321
+    </ion-card-content>
+    <ion-button expand="block" color="danger">Ayuda con este viaje</ion-button>
+  </ion-card>
+  
+  <ion-button fill="outline" expand="block">Cargar más...</ion-button>
+  
+</ion-content>
