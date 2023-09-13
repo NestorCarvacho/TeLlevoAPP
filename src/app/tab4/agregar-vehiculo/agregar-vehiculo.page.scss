@@ -1,0 +1,14 @@
+seleccion-archivo {
+    // Establece el ancho del campo de entrada de archivo para que ocupe la mitad del espacio disponible
+    flex-basis: 50%;
+    font-size: xx-small;
+  
+    // Alinea el campo de entrada de archivo a la derecha
+    justify-content: flex-end;
+    
+    // Alinea el texto de la etiqueta a la izquierda
+    ion-label {
+      text-align: left;
+    }
+    
+  }

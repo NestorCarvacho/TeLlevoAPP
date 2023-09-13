@@ -24,7 +24,11 @@ const routes: Routes = [
   {
     path: 'ayudaviajes',
     loadChildren: () => import('./ayudaviajes/ayudaviajes.module').then( m => m.AyudaviajesPageModule)
+  },  {
+    path: 'agregar-vehiculo',
+    loadChildren: () => import('./agregar-vehiculo/agregar-vehiculo.module').then( m => m.AgregarVehiculoPageModule)
   }
+
 
 
 ];
