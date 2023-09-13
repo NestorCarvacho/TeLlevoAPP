@@ -6,10 +6,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./administrar-vehiculos.page.scss'],
 })
 export class AdministrarVehiculosPage implements OnInit {
+  isSelected: boolean = false;
+
+  toggleSelection() {
+    this.isSelected = !this.isSelected;
+  }
+
 
   constructor() { }
+  
 
   ngOnInit() {
+    
   }
+
+  
 
 }

@@ -1,13 +1,62 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>terminosyservicios</ion-title>
+    <ion-item>
+      <a [routerLink]="['/tabs/tab4']" class="linkBack">
+        <h4><ion-icon name="arrow-back-outline"></ion-icon> Términos y condiciones</h4></a>
+    </ion-item>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">terminosyservicios</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+
+  <h1>Términos y Condiciones de Uso de TellevoApp</h1>
+
+    <p>Bienvenido a TellevoApp, una aplicación diseñada para ayudarte a encontrar y compartir viajes de manera segura y conveniente. Antes de utilizar nuestros servicios, te invitamos a leer detenidamente nuestros términos y condiciones de uso:</p>
+
+    <ol>
+        <li>
+            <h2>Aceptación de los Términos</h2>
+            <p>Al utilizar TellevoApp, aceptas los siguientes términos y condiciones. Si no estás de acuerdo con estos términos, por favor, abstente de utilizar la aplicación.</p>
+        </li>
+        <li>
+            <h2>Seguridad</h2>
+            <p>La seguridad de nuestros usuarios es nuestra prioridad. Todos los conductores deben pasar una verificación de antecedentes y vehículos para garantizar la seguridad de los pasajeros. Los pasajeros también pueden calificar y reportar conductores en caso de cualquier problema de seguridad.</p>
+        </li>
+        <li>
+            <h2>Pago y Tarifas</h2>
+            <p>Los conductores establecerán las tarifas por sus servicios. Los pagos se realizarán a través de la aplicación y podrán ser en efectivo o electrónicos. TellevoApp se reserva un porcentaje de cada transacción como comisión.</p>
+        </li>
+        <li>
+            <h2>Rutas Compartidas</h2>
+            <p>Los usuarios pueden compartir sus rutas con otros usuarios para ahorrar dinero y reducir la congestión del tráfico. La aplicación proporcionará sugerencias de rutas y coincidencias de viaje, pero los usuarios tienen la opción de aceptar o rechazar.</p>
+        </li>
+        <li>
+            <h2>Responsabilidad</h2>
+            <p>TellevoApp actúa como intermediario entre conductores y pasajeros. No somos responsables de los incidentes que ocurran durante los viajes. Los usuarios deben comportarse de manera respetuosa y cumplir con todas las leyes locales.</p>
+        </li>
+        <li>
+            <h2>Privacidad</h2>
+            <p>Respetamos tu privacidad. Los datos personales y de ubicación se recopilan únicamente con fines de uso de la aplicación y no se compartirán con terceros sin tu consentimiento.</p>
+        </li>
+        <li>
+            <h2>Cancelaciones y Penalizaciones</h2>
+            <p>Los usuarios que cancelen repetidamente viajes después de ser aceptados por un conductor pueden estar sujetos a penalizaciones. Los conductores también pueden cancelar viajes, pero esto podría afectar su calificación.</p>
+        </li>
+        <li>
+            <h2>Política de Conductores y Pasajeros</h2>
+            <p>Los conductores deben tener una licencia de conducir válida y un seguro de vehículo adecuado. Los pasajeros deben ser respetuosos y puntuales. El incumplimiento de estas normas puede dar lugar a la suspensión de la cuenta.</p>
+        </li>
+        <li>
+            <h2>Modificaciones en los Términos</h2>
+            <p>TellevoApp se reserva el derecho de modificar estos términos y condiciones en cualquier momento. Los usuarios serán notificados de los cambios y deberán aceptarlos para seguir utilizando la aplicación.</p>
+        </li>
+        <li>
+            <h2>Soporte y Contacto</h2>
+            <p>Si tienes alguna pregunta o problema, por favor, ponte en contacto con nuestro equipo de soporte a través de la aplicación.</p>
+        </li>
+    </ol>
+
+    <p>Al utilizar TellevoApp, estás participando en una comunidad de usuarios que valoran la seguridad, la eficiencia y la colaboración. Esperamos que disfrutes de la experiencia de viajar con nosotros. ¡Gracias por ser parte de TellevoApp!</p>
+
+  <ion-button expand="block" (click)="scrollToTop()">Subir al inicio del texto</ion-button>
 </ion-content>
