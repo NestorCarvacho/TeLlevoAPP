@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-item>
+      <a [routerLink]="['/tabs/tab4']" class="linkBack">
+        <h4><ion-icon name="arrow-back-outline"></ion-icon> Editar Nombre</h4></a>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Editar nombre</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <hr>
+  <ion-input
+  type="input"
+  fill="solid"
+  label="Nombre"
+  labelPlacement="floating"
+  helperText="Máximo 50 carácteres."
+  errorText="Máximo superado"
+  maxlength="50"
+  [counter]="true"
+></ion-input>
+</ion-content>
