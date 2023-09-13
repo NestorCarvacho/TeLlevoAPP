@@ -30,9 +30,9 @@
 
 
             <div class="col col-12 solicita-viaje" style="margin: auto;">
-                <ion-button id="open-modal" expand="block">Buscar Viaje</ion-button>
+                <ion-button id="modal-viajes" expand="block">Buscar Viaje</ion-button>
 
-                <ion-modal #modal trigger="open-modal" [presentingElement]="presentingElement">
+                <ion-modal #modal trigger="modal-viajes" [presentingElement]="presentingElement">
                     <ng-template>
                         <ion-header>
                             <ion-toolbar>
@@ -53,7 +53,7 @@
                                         <p>
                                             <strong>Destino:
                                             </strong>El cielo</p>
-                                        <ion-button>Aceptar</ion-button>
+                                        <ion-button [routerLink]="['/tabs/tab1/en-viaje-pasajero']" (click)="modal.dismiss()">Aceptar</ion-button>
                                     </ion-label>
                                 </ion-item>
                             </ion-list>

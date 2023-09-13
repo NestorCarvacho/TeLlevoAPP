@@ -1,12 +1,29 @@
 .googleIFrame {
-    height: 400px;
-    width: auto;
-    position: relative;
-    top: 0px;
-    left: 0px;
-    background-color: rgb(229, 227, 223);
-  }
-  a {
-    text-decoration: none;
-    
-  }
+  height: 400px;
+  width: auto;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  background-color: rgb(229, 227, 223);
+}
+
+a {
+  text-decoration: none;
+}
+
+.botonDetalles {
+  font-size: small;
+}
+
+.panel-seleccion {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.selector{
+  display:inline-block;
+  font-size: 85%;
+  margin:auto;
+}

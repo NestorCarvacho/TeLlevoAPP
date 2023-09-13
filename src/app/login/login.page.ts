@@ -16,6 +16,7 @@ export class LoginPage implements OnInit {
 
   }
   inicioSesionFalso(){
+    
     this.router.navigate(['./tabs']);
   }
 
