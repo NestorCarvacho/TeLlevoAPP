@@ -8,21 +8,58 @@
 
 <ion-content [fullscreen]="true" scrollY="true">
     <ion-item>
-        <a [routerLink]="['/tabs/tab1/manejar']"><ion-icon name="speedometer-outline" ></ion-icon> Manejar</a>
+        <a [routerLink]="['/tabs/tab1/manejar']">
+            <ion-icon name="speedometer-outline"></ion-icon>
+            Manejar</a>
     </ion-item>
-    <ion-item class="googleIFrame" once="menu" id="menu1-0" data-sortbtn="btn-primary" >
+    <ion-item class="googleIFrame" once="menu" id="menu1-0" data-sortbtn="btn-primary">
         <ion-img src="../../assets/core/img/programacion-2-e1551291144973.jpg"></ion-img>
     </ion-item>
     <ion-item>
-        <div class="row">
-            <div class="col lcol-12">
+        <div class="row solicita-viaje">
+            <div class="col col-12 solicita-viaje">
                 <h3>Solicita un nuevo viaje</h3>
             </div>
-            <div class="col col-12">
+
+            <div class="col col-12 solicita-viaje">
                 <ion-input label="Inicio" label-placement="floating" fill="outline" placeholder="Ingrese Inicio"></ion-input>
             </div>
-            <div class="col col-12">
+            <div class="col col-12 solicita-viaje">
                 <ion-input label="Destino" label-placement="floating" fill="outline" placeholder="Ingrese destino"></ion-input>
+            </div>
+
+
+            <div class="col col-12 solicita-viaje" style="margin: auto;">
+                <ion-button id="open-modal" expand="block">Buscar Viaje</ion-button>
+
+                <ion-modal #modal trigger="open-modal" [presentingElement]="presentingElement">
+                    <ng-template>
+                        <ion-header>
+                            <ion-toolbar>
+                                <ion-title>Buscando Viaje</ion-title>
+                                <ion-buttons slot="end">
+                                    <ion-button (click)="modal.dismiss()">Cerrar</ion-button>
+                                </ion-buttons>
+                            </ion-toolbar>
+                        </ion-header>
+                        <ion-content>
+                            <ion-list>
+                                <ion-item>
+                                    <ion-avatar slot="start">
+                                        <ion-img src="../../assets/core/img/Alan.jpg"></ion-img>
+                                    </ion-avatar>
+                                    <ion-label>
+                                        <h2>Alan Gajardo</h2>
+                                        <p>
+                                            <strong>Destino:
+                                            </strong>El cielo</p>
+                                        <ion-button>Aceptar</ion-button>
+                                    </ion-label>
+                                </ion-item>
+                            </ion-list>
+                        </ion-content>
+                    </ng-template>
+                </ion-modal>
             </div>
         </div>
     </ion-item>
