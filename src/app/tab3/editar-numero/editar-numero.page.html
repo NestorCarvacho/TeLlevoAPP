@@ -2,7 +2,7 @@
   <ion-toolbar>
     <ion-item>
       <a [routerLink]="['/tabs/tab3']" class="linkBack">
-        <h4><ion-icon name="arrow-back-outline"></ion-icon> Editar Nombre</h4></a>
+        <h4><ion-icon name="arrow-back-outline"></ion-icon> Editar número de télefono</h4></a>
     </ion-item>
   </ion-toolbar>
 </ion-header>
@@ -10,23 +10,24 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Editar nombre</ion-title>
+      <ion-title size="large">Editar número de télefono</ion-title>
     </ion-toolbar>
   </ion-header>
   <hr>
   <ion-input
-  type="input"
+  type="text"
   fill="solid"
-  label="Nombre"
+  label="Número"
   labelPlacement="floating"
-  helperText="Máximo 50 carácteres."
+  helperText="Máximo 12 carácteres."
   errorText="Máximo superado"
-  maxlength="50"
+  maxlength="12"
   [counter]="true"
+  [(ngModel)]="nuevoTelefono"
 ></ion-input>
 <br>
 <div class="ion-text-center">
-  <ion-button shape="round" color="warning" [routerLink]="['/tabs/tab3']">Confirmar</ion-button>
+  <ion-button shape="round" color="warning" (click)="validarYActualizarTelefono()" type="submit">Confirmar</ion-button>
   <ion-button shape="round" color="danger" [routerLink]="['/tabs/tab3']">Cancelar</ion-button>
 </div>
 

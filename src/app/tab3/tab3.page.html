@@ -28,22 +28,22 @@
         <ion-item detail="true">
             <ion-label [routerLink]="['/tabs/tab3/editar-nombre']"> 
                 <h3>Nombre</h3>
-                <p>Alan gajardo</p>
+                <p>{{ nombre }}</p>
             </ion-label>
         </ion-item>
         <ion-item detail="true">
-            <ion-label>
+            <ion-label [routerLink]="['/tabs/tab3/editar-numero']" >
                 <h3>Número de teléfono</h3>
-                <p>+56945662539</p>
+                <p>{{ telefono }}</p>
             </ion-label>
         </ion-item>
-        <ion-item detail="true">
+        <ion-item detail="true" [routerLink]="['/tabs/tab3/editar-correo']">
             <ion-label>
                 <h3>Correo electrónico</h3>
-                <p>alan.gajardo@profesor.duoc.cl</p>
+                <p>{{ correo }}</p>
             </ion-label>
         </ion-item>
-        <ion-item detail="true">
+        <ion-item detail="true" [routerLink]="['/tabs/tab2']">
             <ion-label>
                 <h3>Viajes realizados</h3>
                 <p>Has realizado 125 viajes en total.</p>

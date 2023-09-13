@@ -9,6 +9,14 @@ const routes: Routes = [
   },  {
     path: 'editar-nombre',
     loadChildren: () => import('./editar-nombre/editar-nombre.module').then( m => m.EditarNombrePageModule)
+  },
+  {
+    path: 'editar-numero',
+    loadChildren: () => import('./editar-numero/editar-numero.module').then( m => m.EditarNumeroPageModule)
+  },
+  {
+    path: 'editar-correo',
+    loadChildren: () => import('./editar-correo/editar-correo.module').then( m => m.EditarCorreoPageModule)
   }
 
 ];
