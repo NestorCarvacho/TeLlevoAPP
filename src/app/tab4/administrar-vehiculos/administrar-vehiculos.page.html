@@ -1,34 +1,47 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-      <ion-title>Administrar Vehiculos</ion-title>
+    <ion-item>
+        <a [routerLink]="['/tabs/tab4']" class="linkBack">
+          <h4><ion-icon name="arrow-back-outline"></ion-icon> Administar vehículos</h4></a>
+      </ion-item>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-item>
-      <a [routerLink]="['/tabs/tab4']" class="linkBack">
-        <h4><ion-icon name="arrow-back-outline"></ion-icon> Volver</h4></a>
-    </ion-item>
-  <ion-item>
       Selecciona tu vehiculo
   </ion-item>
-  <ion-item>
+  <ion-item >
       <ion-card>
-          <div class="CardVehiculo">
+          <div class="CardVehiculo"  [ngClass]="{ 'selected-card': isSelected }" (click)="toggleSelection()">
               <ion-input label="Patente" fill="outline" placeholder="PP-AA 23" disabled="true"></ion-input>
               <ion-input label="Marca" fill="outline" placeholder="Toyota" disabled="true"></ion-input>
               <ion-input label="Modelo" fill="outline" placeholder="Yaris" disabled="true"></ion-input>
               <div>
+                <br>
                 <a [routerLink]="['/tab4/administar-vehiculos']"><ion-icon name="create-outline"></ion-icon> Editar Vehiculo</a>
               </div>
           </div>
       </ion-card>
   </ion-item>
   <ion-item>
+    <ion-card>
+        <div class="CardVehiculo" >
+            <ion-input label="Patente" fill="outline" placeholder="NO-SE 12" disabled="true"></ion-input>
+            <ion-input label="Marca" fill="outline" placeholder="Ferrari" disabled="true"></ion-input>
+            <ion-input label="Modelo" fill="outline" placeholder="El ferrari" disabled="true"></ion-input>
+            <div>
+              <br>
+              <a [routerLink]="['/tab4/administar-vehiculos']"><ion-icon name="create-outline"></ion-icon> Editar Vehiculo</a>
+            </div>
+        </div>  
+    </ion-card>
+</ion-item>
+  <ion-item>
       <ion-card>
           <div class="CardVehiculo">
               <ion-icon name="add-circle-outline"></ion-icon>
-              <h3><a [routerLink]="['/tabs/tab4/administar-vehiculos/agregar-vehiculo']">Agregar nuevo vehiculo</a></h3>
+              <h3><a [routerLink]="['/tabs/tab4/administar-vehiculos']">Agregar nuevo vehiculo</a></h3>
           </div>
       </ion-card>
   </ion-item>

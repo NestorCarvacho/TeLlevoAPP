@@ -14,3 +14,7 @@ a {
   text-decoration: none;
   color: #FFB800;
 }
+
+.selected-card {
+  border: 2px solid var(--ion-color-primary); 
+}

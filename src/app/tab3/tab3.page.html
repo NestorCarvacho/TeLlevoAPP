@@ -1,8 +1,9 @@
 <ion-header [translucent]="true">
     <ion-toolbar>
-        <ion-title>
-            Información de la cuenta
-        </ion-title>
+        <ion-item>
+            <a [routerLink]="['/tabs/tab4']" class="linkBack">
+              <h4><ion-icon name="arrow-back-outline"></ion-icon> Información de la cuenta</h4></a>
+          </ion-item>
     </ion-toolbar>
 </ion-header>
 
@@ -15,7 +16,7 @@
                         <ion-icon name="add"></ion-icon>
                 </ion-fab-button>
                 </ion-fab>
-                <img alt="Silhouette of a person's head" [src]="imagenPerfil"/>
+                <img alt="Silhouette of a person's head" [src]="getImagenPerfil()"/>
             </ion-avatar>
             <input type="file" #fileInput style="display:none" (change)="cargarNuevaImagen($event)">
         </ion-item>
@@ -25,7 +26,7 @@
             </ion-list-header>
         </ion-item>
         <ion-item detail="true">
-            <ion-label>
+            <ion-label [routerLink]="['/tabs/tab3/editar-nombre']"> 
                 <h3>Nombre</h3>
                 <p>Alan gajardo</p>
             </ion-label>

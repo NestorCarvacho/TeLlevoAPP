@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ImgService } from '../img.service';
 
 @Component({
   selector: 'app-tab4',
@@ -7,11 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Tab4Page implements OnInit {
 
-  constructor() { }
+  constructor(private imagenPerfilService: ImgService) { }
 
   ngOnInit() {
   }
 
-  imagenPerfil: string = 'https://ionicframework.com/docs/img/demos/avatar.svg';
+  getImagenPerfil(): string {
+    return this.imagenPerfilService.getImagenPerfil();
+  }
+
 
 }

@@ -6,7 +6,11 @@ const routes: Routes = [
   {
     path: '',
     component: Tab3Page,
+  },  {
+    path: 'editar-nombre',
+    loadChildren: () => import('./editar-nombre/editar-nombre.module').then( m => m.EditarNombrePageModule)
   }
+
 ];
 
 @NgModule({
