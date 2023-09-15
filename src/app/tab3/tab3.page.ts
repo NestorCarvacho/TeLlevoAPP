@@ -31,6 +31,7 @@ export class Tab3Page {
       this.imagenPerfilService.setImagenPerfil(urlImagen);
     }
   } 
+  
   getImagenPerfil(): string {
     return this.imagenPerfilService.getImagenPerfil();
   }
