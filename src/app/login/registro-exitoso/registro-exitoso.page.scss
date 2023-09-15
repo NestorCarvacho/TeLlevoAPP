@@ -1,0 +1,11 @@
+.icon-container {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: 50vh; /* Ajusta la altura al 100% del viewport */
+}
+
+/* Estilos para el ícono */
+.icon {
+    font-size: 100px; /* Ajusta el tamaño del ícono */
+}
