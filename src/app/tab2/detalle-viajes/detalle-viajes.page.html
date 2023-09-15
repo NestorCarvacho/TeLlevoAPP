@@ -1,13 +1,15 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>detalleViajes</ion-title>
+    <ion-item>
+      <a [routerLink]="['/tabs/tab2']" class="linkBack">
+        <h4><ion-icon name="arrow-back-outline"></ion-icon> Volver</h4></a>
+    </ion-item>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-item>
-    <a [routerLink]="['/tabs/tab2']" class="linkBack">
-      <h4><ion-icon name="arrow-back-outline"></ion-icon> Volver</h4></a>
+    <p>Detalle de viaje: idviaje</p>
   </ion-item>
   <ion-item>
     <p>11:45 AM, Lunes 13 de agosto 2023 con Alan Gajardo</p>

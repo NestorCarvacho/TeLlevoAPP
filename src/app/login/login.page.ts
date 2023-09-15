@@ -22,7 +22,7 @@ export class LoginPage implements OnInit {
 
 
   handleClick() {
-      this.router.navigate(['./tabs']);
+      this.router.navigate(['login/registro']);
   } 
 }
 

@@ -1,13 +1,67 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>registro</ion-title>
+    <ion-item>
+      <a [routerLink]="['..']" class="linkBack">
+        <h4><ion-icon name="arrow-back-outline"></ion-icon> Registro</h4></a>
+    </ion-item>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">registro</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-list>
+    <ion-list>
+      <ion-input
+        type="text"
+        fill="solid"
+        label="Ingrese su nombre"
+        labelPlacement="floating"
+        errorText="Número no válido"
+        helperText="Máximo 12 carácteres."
+        maxlength="12"
+        [counter]="true"
+      ></ion-input>
+  
+      <ion-input
+        type="number"
+        fill="solid"
+        label="Ingrese su número"
+        labelPlacement="floating"
+        errorText="Número no válido"
+      ></ion-input>
+  
+      <ion-input
+        type="password"
+        fill="solid"
+        label="Contraseña"
+        labelPlacement="floating"
+        errorText="Las contraseñas no coinciden"
+      ></ion-input>
+
+      <ion-input
+        type="password"
+        fill="solid"
+        label="Confirme su contraseña"
+        labelPlacement="floating"
+        errorText="Las contraseñas no coinciden"
+      ></ion-input>
+  
+      <ion-input
+        type="email"
+        fill="solid"
+        label="Correo electrónico"
+        labelPlacement="floating"
+        helperText="Máximo 80 carácteres."
+        errorText="Máximo superado"
+        maxlength="80"
+        [counter]="true"
+      ></ion-input>
+  
+    </ion-list>
+  </ion-list>
+  <hr>
+  <div class="ion-text-center">
+    <ion-button shape="round" color="warning" [routerLink]="['../registro-exitoso']">Registrarse</ion-button>
+    <ion-button shape="round" color="danger" [routerLink]="['login']">Cancelar</ion-button>
+  </div>
+  
 </ion-content>
