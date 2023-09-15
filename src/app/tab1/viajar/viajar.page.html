@@ -6,7 +6,7 @@
     </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" scrollY="true" >
+<ion-content [fullscreen]="true" scrollY="true">
     <ion-item>
         <div class="row panel-seleccion">
             <div class="col col-6 selector">
@@ -14,9 +14,9 @@
                     <ion-icon name="speedometer-outline"></ion-icon>
                     Soy Pasajero</a>
             </div>
-            <div class="col col-6" >
+            <div class="col col-6">
                 <a [routerLink]="['/tabs/tab1/en-viaje']" class="btn btn-primary botonDetalles">publicar Viaje</a>
-            </div> 
+            </div>
         </div>
     </ion-item>
     <ion-item class="googleIFrame" once="menu" id="menu1-0" data-sortbtn="btn-primary">
@@ -28,7 +28,43 @@
                 <h3>Publicar Viaje Disponible</h3>
             </div>
             <div class="col col-12">
-                <ion-input label="Destino" label-placement="floating" fill="outline" placeholder="Ingrese Destino"></ion-input>
+                <ion-searchbar id="modalBuscarDestinoConductor" placeholder="Ingrese Destino"></ion-searchbar>
+
+                <ion-modal #modalDestino trigger="modalBuscarDestinoConductor" [presentingElement]="presentingElement">
+                    <ng-template>
+                        <ion-header>
+                            <ion-toolbar>
+                                <ion-title>Buscando Viaje</ion-title>
+                                <ion-buttons slot="end">
+                                    <ion-button (click)="modalDestino.dismiss()">Cerrar</ion-button>
+                                </ion-buttons>
+                            </ion-toolbar>
+                        </ion-header>
+                        <ion-content>
+                            <ion-list>
+                                <ion-item>
+                                    <ion-searchbar></ion-searchbar>
+                                </ion-item>
+                                <ion-item class="destinoConductor">
+                                    <div class="row ">
+                                        <div class="col col-8">
+                                            <h5>Plaza Puente Alto</h5>
+                                        </div>
+                                        <div class="col col-4" style="margin: auto;">
+                                            <ion-button [routerLink]="['/tabs/tab1/en-viaje']" (click)="modalDestino.dismiss()">Aceptar</ion-button>
+                                        </div>
+                                        <div class="col col-8">
+                                            <p>
+                                                <strong>Comuna:
+                                                </strong>
+                                                Puente Alto</p>
+                                        </div>
+                                    </div>
+                                </ion-item>
+                            </ion-list>
+                        </ion-content>
+                    </ng-template>
+                </ion-modal>
             </div>
         </div>
     </ion-item>

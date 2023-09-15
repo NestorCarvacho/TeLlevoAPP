@@ -22,13 +22,45 @@
             </div>
 
             <div class="col col-12 solicita-viaje">
-                <ion-input label="Inicio" label-placement="floating" fill="outline" placeholder="Ingrese Inicio"></ion-input>
-            </div>
-            <div class="col col-12 solicita-viaje">
-                <ion-input label="Destino" label-placement="floating" fill="outline" placeholder="Ingrese destino"></ion-input>
-            </div>
+                <ion-searchbar id="modalDestinoPasajero" placeholder="Seleccione Destino"></ion-searchbar>
 
 
+                <ion-modal #modalDestinoPasajero trigger="modalDestinoPasajero" [presentingElement]="presentingElement2">
+                    <ng-template>
+                        <ion-header>
+                            <ion-toolbar>
+                                <ion-title>Buscando Viaje</ion-title>
+                                <ion-buttons slot="end">
+                                    <ion-button (click)="modalDestinoPasajero.dismiss()">Cerrar</ion-button>
+                                </ion-buttons>
+                            </ion-toolbar>
+                        </ion-header>
+                        <ion-content>
+                            <ion-list>
+                                <ion-item>
+                                    <ion-searchbar></ion-searchbar>
+                                </ion-item>
+                                <ion-item class="destinoConductor">
+                                    <div class="row ">
+                                        <div class="col col-8">
+                                            <h5>Plaza Puente Alto</h5>
+                                        </div>
+                                        <div class="col col-4" style="margin: auto;">
+                                            <ion-button (click)="modalDestinoPasajero.dismiss()">Aceptar</ion-button>
+                                        </div>
+                                        <div class="col col-8">
+                                            <p>
+                                                <strong>Comuna:
+                                                </strong>
+                                                Puente Alto</p>
+                                        </div>
+                                    </div>
+                                </ion-item>
+                            </ion-list>
+                        </ion-content>
+                    </ng-template>
+                </ion-modal>
+            </div>
             <div class="col col-12 solicita-viaje" style="margin: auto;">
                 <ion-button id="modal-viajes" expand="block">Buscar Viaje</ion-button>
 
@@ -44,6 +76,9 @@
                         </ion-header>
                         <ion-content>
                             <ion-list>
+                                <ion-item>
+                                    <ion-searchbar></ion-searchbar>
+                                </ion-item>
                                 <ion-item>
                                     <ion-avatar slot="start">
                                         <ion-img src="../../assets/core/img/Alan.jpg"></ion-img>
