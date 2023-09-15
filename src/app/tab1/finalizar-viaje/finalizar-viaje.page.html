@@ -1,0 +1,68 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Finalizar Viaje</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13293.039164697037!2d-70.58374384130859!3d-33.59856323715853!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662d7416213cfed%3A0x1fabc40cb2bdab64!2sAv.%20Concha%20y%20Toro%201340%2C%208150215%20Puente%20Alto%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses!2scl!4v1694359962458!5m2!1ses!2scl"
+      width="600"
+      height="200"
+      style="border: 0"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+  </ion-item>
+  <ion-item>
+    <div>
+      <h6>Detalles del viaje</h6>
+      <p>
+        <ion-icon name="person-circle"></ion-icon>
+        Alan Gajardo
+      </p>
+      <p>
+        <ion-icon name="navigate-circle"></ion-icon>
+        14 Kilometros
+      </p>
+      <p>
+        <ion-icon name="cash"></ion-icon>
+        Efectivo
+      </p>
+      <p>
+        <ion-icon name="wallet"></ion-icon>
+        $2.000
+      </p>
+    </div>
+  </ion-item>
+  <ion-item>
+    <div class="detalleRuta">
+      <h6>Ruta</h6>
+
+      <div class="row">
+        <div class="col col-2">
+          <div class="puntoViaje"></div>
+          <div class="puntoViaje2"></div>
+        </div>
+        <div class="col col-10 DireccionCard">
+          Avenida Concha Y Toro, Av. San Carlos 1340, Puente Alto, Región
+          Metropolitana
+        </div>
+        <div class="col col-2">
+          <div class="puntoViaje3"></div>
+        </div>
+        <div class="col col-10 DireccionCard">
+          Avenida Concha Y Toro, Av. San Carlos 1340, Puente Alto, Región
+          Metropolitana
+        </div>
+      </div>
+    </div>
+  </ion-item>
+  <ion-item>
+    <ion-button expand="block" margin="auto" [routerLink]="['/tabs/tab1']">
+      Finalizar Viaje
+    </ion-button>
+  </ion-item>
+</ion-content>
