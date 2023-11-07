@@ -12,7 +12,7 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" scrollY="true" style="margin-bottom: 200px;">
-    <ion-item>
+    <ion-item *ngFor="let viaje of viajes">
         <div class="cardviajes">
             <div class="card">
                 <div class="container">
@@ -25,178 +25,17 @@
                                     <div id="puntoViaje"></div>
                                     <div id="puntoViaje2"></div>
                                 </div>
-                                <div class="col col-10 DireccionCard">Avenida Concha Y Toro, Av. San Carlos 1340, Puente Alto, Región Metropolitana
+                                <div class="col col-10 DireccionCard">{{ viaje.inicio_viaje }}
 
                                 </div>
                                 <div class="col col-2">
                                     <div id="puntoViaje3"></div>
                                 </div>
-                                <div class="col col-10 DireccionCard">Avenida Concha Y Toro, Av. San Carlos 1340, Puente Alto, Región Metropolitana
-
+                                <div class="col col-10 DireccionCard">{{ viaje.destino_viaje }}
                                 </div>
                             </div>
                         </div>
                         <div class="col col-12">
-                            <a [routerLink]="['/tabs/tab2/detalle-viajes']" class="btn btn-primary botonDetalles">Ver detalles</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </ion-item>
-    <ion-item>
-        <div class="cardviajes">
-            <div class="card">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-6 nombreAppCard">Te Llevo</div>
-                        <div class="col-6 fechaCard">Fecha</div>
-                        <div class="col-12">
-                            <div class="row">
-                                <div class="col-2">
-                                    <div id="puntoViaje"></div>
-                                    <div id="puntoViaje2"></div>
-                                </div>
-                                <div class="col-10 DireccionCard">Avenida Concha Y Toro, Av. San Carlos 1340, Puente Alto, Región Metropolitana
-
-                                </div>
-                                <div class="col-2">
-                                    <div id="puntoViaje3"></div>
-                                </div>
-                                <div class="col-10 DireccionCard">Avenida Concha Y Toro, Av. San Carlos 1340, Puente Alto, Región Metropolitana
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <a [routerLink]="['/tabs/tab2/detalle-viajes']" class="btn btn-primary botonDetalles">Ver detalles</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </ion-item>
-    <ion-item>
-        <div class="cardviajes">
-            <div class="card">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-6 nombreAppCard">Te Llevo</div>
-                        <div class="col-6 fechaCard">Fecha</div>
-                        <div class="col-12">
-                            <div class="row">
-                                <div class="col-2">
-                                    <div id="puntoViaje"></div>
-                                    <div id="puntoViaje2"></div>
-                                </div>
-                                <div class="col-10 DireccionCard">Avenida Concha Y Toro, Av. San Carlos 1340, Puente Alto, Región Metropolitana
-
-                                </div>
-                                <div class="col-2">
-                                    <div id="puntoViaje3"></div>
-                                </div>
-                                <div class="col-10 DireccionCard">Avenida Concha Y Toro, Av. San Carlos 1340, Puente Alto, Región Metropolitana
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <a [routerLink]="['/tabs/tab2/detalle-viajes']" class="btn btn-primary botonDetalles">Ver detalles</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </ion-item>
-    <ion-item>
-        <div class="cardviajes">
-            <div class="card">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-6 nombreAppCard">Te Llevo</div>
-                        <div class="col-6 fechaCard">Fecha</div>
-                        <div class="col-12">
-                            <div class="row">
-                                <div class="col-2">
-                                    <div id="puntoViaje"></div>
-                                    <div id="puntoViaje2"></div>
-                                </div>
-                                <div class="col-10 DireccionCard">Avenida Concha Y Toro, Av. San Carlos 1340, Puente Alto, Región Metropolitana
-
-                                </div>
-                                <div class="col-2">
-                                    <div id="puntoViaje3"></div>
-                                </div>
-                                <div class="col-10 DireccionCard">Avenida Concha Y Toro, Av. San Carlos 1340, Puente Alto, Región Metropolitana
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <a [routerLink]="['/tabs/tab2/detalle-viajes']" class="btn btn-primary botonDetalles">Ver detalles</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </ion-item>
-    <ion-item>
-        <div class="cardviajes">
-            <div class="card">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-6 nombreAppCard">Te Llevo</div>
-                        <div class="col-6 fechaCard">Fecha</div>
-                        <div class="col-12">
-                            <div class="row">
-                                <div class="col-2">
-                                    <div id="puntoViaje"></div>
-                                    <div id="puntoViaje2"></div>
-                                </div>
-                                <div class="col-10 DireccionCard">Avenida Concha Y Toro, Av. San Carlos 1340, Puente Alto, Región Metropolitana
-
-                                </div>
-                                <div class="col-2">
-                                    <div id="puntoViaje3"></div>
-                                </div>
-                                <div class="col-10 DireccionCard">Avenida Concha Y Toro, Av. San Carlos 1340, Puente Alto, Región Metropolitana
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <a [routerLink]="['/tabs/tab2/detalle-viajes']" class="btn btn-primary botonDetalles">Ver detalles</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </ion-item>
-    <ion-item>
-        <div class="cardviajes">
-            <div class="card">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-6 nombreAppCard">Te Llevo</div>
-                        <div class="col-6 fechaCard">Fecha</div>
-                        <div class="col-12">
-                            <div class="row">
-                                <div class="col-2">
-                                    <div id="puntoViaje"></div>
-                                    <div id="puntoViaje2"></div>
-                                </div>
-                                <div class="col-10 DireccionCard">Avenida Concha Y Toro, Av. San Carlos 1340, Puente Alto, Región Metropolitana
-
-                                </div>
-                                <div class="col-2">
-                                    <div id="puntoViaje3"></div>
-                                </div>
-                                <div class="col-10 DireccionCard">Avenida Concha Y Toro, Av. San Carlos 1340, Puente Alto, Región Metropolitana
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12">
                             <a [routerLink]="['/tabs/tab2/detalle-viajes']" class="btn btn-primary botonDetalles">Ver detalles</a>
                         </div>
                     </div>

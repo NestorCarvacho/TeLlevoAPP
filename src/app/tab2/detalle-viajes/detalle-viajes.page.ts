@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiServiceService } from 'src/app/api-service.service';
 
 @Component({
   selector: 'app-detalle-viajes',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetalleViajesPage implements OnInit {
 
-  constructor() { }
+  viajes: any[] = [];
+
+  constructor(private apiService: ApiServiceService) { }
 
   ngOnInit() {
+    this.obtenerViajes();
   }
 
+  obtenerViajes(){
+    this.apiService.getViajes().subscribe(
+      (data) => {
+        console.log(data);
+        this.viajes = data;
+      },
+      (error) => {
+        console.error('Error al obtener viajes:', error);
+      }
+    );
+  }
 }

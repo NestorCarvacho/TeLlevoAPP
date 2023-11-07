@@ -56,4 +56,8 @@ export class ApiServiceService {
     return this.http.get(url);
   }
 
+  getViajes(): Observable<any> {
+    return this.http.get<any>('http://127.0.0.1:8000/api/viaje/');
+  }
+
 }
