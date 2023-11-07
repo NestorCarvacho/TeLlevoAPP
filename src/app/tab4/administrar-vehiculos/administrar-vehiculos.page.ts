@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiServiceService } from 'src/app/api-service.service';
+import { Storage } from '@ionic/storage-angular';
 
 @Component({
   selector: 'app-administrar-vehiculos',
@@ -13,25 +14,31 @@ export class AdministrarVehiculosPage implements OnInit {
     this.isSelected = !this.isSelected;
   }
 
-
-  constructor(private apiService: ApiServiceService) { }
-  vehiculos: any[] = [];
+  constructor( private apiService: ApiServiceService, private storage: Storage) { }
+  vehiculos: any;
   
-
   ngOnInit() {
-    this.getVehiculos();
-  }
-
-  getVehiculos() {
-    this.apiService.getVehiculos().subscribe(
-      (response) => {
-        this.vehiculos = response;
-        console.log('Vehículos obtenidos correctamente:', response);
+    this.storage.get('user_id').then(
+      async (userId: number | null) => {
+        if (userId !== null) {
+          this.apiService.getVehiculoById(userId).subscribe(
+            async (data: any) => {
+              this.vehiculos = data;
+            },
+            (error: any) => {
+              // Maneja los errores aquí
+              console.error(error);
+            }
+          );
+        } else {
+          //
+        }
       },
-      (error) => {
-        console.error('Error al obtener vehículos:', error);
+      (storageError: any) => {
+        //
       }
     );
   }
+
 
 }

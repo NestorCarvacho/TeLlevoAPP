@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiServiceService } from 'src/app/api-service.service';
-
+import { Storage } from '@ionic/storage-angular';
 
 @Component({
   selector: 'app-agregar-vehiculo',
@@ -9,22 +9,41 @@ import { ApiServiceService } from 'src/app/api-service.service';
   styleUrls: ['./agregar-vehiculo.page.scss'],
 })
 export class AgregarVehiculoPage implements OnInit {
-    
-  patente: string | undefined;
-  modelo:String | undefined;
-  marca:string | undefined;
+  vehiculoData: any = {
+    patente: '',
+    marca: '',
+    modelo: '',
+    usuario: '',
+  };
 
-
-  constructor(private router: Router, private apiService: ApiServiceService) { }
+  constructor(private router: Router, private apiService: ApiServiceService, private storage: Storage) { }
 
   ngOnInit() {
   }
 
-  guardarVehiculo() {
+  async crearVehiculo(vehiculoData: any) {
+    const userId = await this.storage.get('user_id');
 
-    this.router.navigate(["tabs/tab4/administrar-vehiculos"])
-    // Aquí puedes agregar la lógica para guardar los datos del vehículo en tu base de datos o en algún servicio.
-    // Puedes utilizar Angular HTTP Client para enviar los datos al servidor, por ejemplo.
+    if (userId !== null) {
+      const vehiculoData = {
+        patente: this.vehiculoData.patente,
+        marca: this.vehiculoData.marca,
+        modelo: this.vehiculoData.modelo,
+        usuario: userId,
+      };
+
+      this.apiService.createVehiculo(vehiculoData).subscribe(
+        (response) => {
+          this.router.navigate(['tabs/tab4/administrar-vehiculos']);
+          console.log('Vehículo creado correctamente:', response);
+        },
+        (error) => {
+          console.error('Error al crear vehículo:', error);
+        }
+      );
+    } else {
+      console.error('No se pudo obtener el user_id del almacenamiento local.');
+    }
   }
 
   onFileSelected(event: any) {
@@ -35,20 +54,28 @@ export class AgregarVehiculoPage implements OnInit {
     }
   }
  
-  vehiculoData = {
-      patente: '',
-      marca: '',
-      modelo: ''
-    };
-    createAndTestVehiculo() {
-
-    this.apiService.createVehiculo(this.vehiculoData).subscribe(
-      (response) => {
-        console.log('Vehículo creado correctamente:', response);
-      },
-      (error) => {
-        console.error('Error al crear vehículo:', error);
+  vehiculos: any;
+async sincronizar(){
+  this.storage.get('user_id').then(
+    async (userId: number | null) => {
+      if (userId !== null) {
+        this.apiService.getVehiculoById(userId).subscribe(
+          async (data: any) => {
+            this.vehiculos = data;
+          },
+          (error: any) => {
+            // Maneja los errores aquí
+            console.error(error);
+          }
+        );
+      } else {
+        //
       }
-    );
-  }
+    },
+    (storageError: any) => {
+      //
+    }
+  );
+}
+
 }

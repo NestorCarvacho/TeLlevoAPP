@@ -51,4 +51,9 @@ export class ApiServiceService {
     return this.http.get(url);
   }
 
+  getVehiculoById(conductorId: number){
+    const url = `${this.apiUrl}api/vehiculos/usuario/${conductorId}/`;
+    return this.http.get(url);
+  }
+
 }

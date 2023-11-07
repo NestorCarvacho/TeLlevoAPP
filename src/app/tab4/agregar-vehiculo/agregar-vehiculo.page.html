@@ -6,7 +6,7 @@
 </ion-header>
 
 <ion-content>
-    <form (ngSubmit)="guardarVehiculo()">
+    <form (ngSubmit)="crearVehiculo(vehiculoData)">
         <ion-item>
             <ion-label position="floating">Patente</ion-label>
             <ion-input [(ngModel)]="vehiculoData.patente" id="patente" name="patente" required="required"></ion-input>
@@ -32,6 +32,6 @@
             <ion-label position="stacked">Certificado de Antecedentes</ion-label>
             <ion-input class="seleccion-archivo" type="file" (change)="onFileSelected($event)" required="required"></ion-input>
         </ion-item>
-        <ion-button type="submit" expand="full" (click)="createAndTestVehiculo()">Guardar</ion-button>
+        <ion-button type="submit" expand="full" (click)="sincronizar()">Guardar</ion-button>
     </form>
 </ion-content>

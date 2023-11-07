@@ -23,6 +23,15 @@ export class LoginPage implements OnInit {
     const storage = this.storageService.getStorage();
   }
 
+  userData = {
+    first_name: '',
+    password: '',
+    telefono: '',
+    email: '',
+    username: ''
+
+  };
+
   realizarLogin() {
     this.apiService.login(this.username, this.password).subscribe(
       (respuesta) => {
@@ -53,8 +62,6 @@ export class LoginPage implements OnInit {
   
     await alert.present();
   }
-
-  
 
   handleClick(){
     this.router.navigate(['login/registro']);

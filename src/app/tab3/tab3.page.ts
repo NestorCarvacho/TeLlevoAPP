@@ -58,13 +58,8 @@ export class Tab3Page {
           this.apiService.getConductorById(userId).subscribe(
             async (data: any) => {
               this.conductor = data;
-              console.log(data);
-  
-              // Verifica que la propiedad 'usuario' esté definida antes de acceder a ella
               if (this.conductor && this.conductor.usuario) {
-                // Aquí puedes acceder a las propiedades del usuario sin generar un error
                 const userEmail = this.conductor.usuario.email;
-                console.log('Email del usuario:', userEmail);
               }
             },
             (error: any) => {

@@ -26,10 +26,10 @@ export class RegistroPage implements OnInit {
 
     this.apiService.createUser(this.userData).subscribe(
       (response) => {
-        this.router.navigate(['../registro-exitoso']);
+        this.router.navigate(['login/registro-exitoso']);
       },
       (error) => {
-        this.mostrarErrorAlerta('Error al crear registro, por favor compruebe los errores.'+error);
+        this.mostrarErrorAlerta('Error al crear registro, por favor compruebe los errores.');
       }
     );
   }

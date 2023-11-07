@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ImgService } from '../img.service';
 import { ApiServiceService } from '../api-service.service';
 import { Storage } from '@ionic/storage-angular';
-import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-tab4',
@@ -11,12 +10,11 @@ import { AuthService } from '../auth.service';
 })
 export class Tab4Page implements OnInit {
 
-  constructor(private imagenPerfilService: ImgService, private apiService: ApiServiceService, private storage: Storage, private storageService: AuthService) { 
+  constructor(private imagenPerfilService: ImgService, private apiService: ApiServiceService, private storage: Storage) { 
     
   }
   async conseguirPerfil(){
     let id = await this.storage.get('user_id');
-    console.log(id);
   }
   usuarios: any;
 
@@ -31,34 +29,36 @@ export class Tab4Page implements OnInit {
           this.apiService.getUserById(userId).subscribe(
             (data: any) => {
               this.usuarios = data;
-              console.log(data);
-              this.conductorData = {
-                id: data.id,
-                nombre_usuario: data.username,
-                numero_telefono: data.telefono, 
-                correo_electronico: data.email,
-                viajes_realizados: 0,
-                usuario: data.id,
+              if (data && data.id && data.username && data.telefono && data.email) {
+                this.conductorData = {
+                  id: data.id,
+                  nombre_usuario: data.username,
+                  numero_telefono: data.telefono,
+                  correo_electronico: data.email,
+                  viajes_realizados: 0,
+                  usuario: data.id,
                 };
+    
+                // Hace la solicitud para crear el conductor con los datos obtenidos
                 this.apiService.createConductor(this.conductorData).subscribe(
                   (response) => {
-                    //si
+                    // Si se crea correctamente
+                    console.log('Conductor creado correctamente:', response);
                   },
                   (error) => {
-                    //no
+                    // Maneja los errores aquí
                   }
                 );
+              }
             },
             (error: any) => {
               // Maneja los errores aquí
             }
           );
-        } else {
-          console.error('No se pudo obtener el user_id del almacenamiento local.');
         }
       },
       (storageError: any) => {
-        console.error('Error al obtener el user_id del almacenamiento local:', storageError);
+        // Maneja los errores aquí
       }
     );
   }
@@ -67,7 +67,4 @@ export class Tab4Page implements OnInit {
     return this.imagenPerfilService.getImagenPerfil();
   }
   
-  
-
-
 }
