@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import {GoogleMap} from '@capacitor/google-maps'
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-tab1',
@@ -8,6 +10,8 @@ import { Component } from '@angular/core';
 export class Tab1Page {
   presentingElement: Element | null = null;
   presentingElement2: Element | null = null;
+  @ViewChild('map')mapRef: ElementRef;
+  map: GoogleMap;
 
   constructor() {}
 
@@ -29,5 +33,24 @@ export class Tab1Page {
     } else {
       console.error("No se encontró ningún elemento con la clase '.ion-page'");
     }
+  }
+
+  ionViewDidEnter(){
+    this.createMap();
+  }
+
+  async createMap(){
+    this.map = await GoogleMap.create({
+      id: 'mi-mapa',
+
+      apiKey: environment.mapsKey,
+
+      element: this.mapRef.nativeElement,
+
+      // forceCreate: true,
+
+      config: 
+      
+    })
   }
 }

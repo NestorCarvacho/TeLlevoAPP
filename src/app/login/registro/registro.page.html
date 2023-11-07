@@ -1,72 +1,64 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-item>
-      <a [routerLink]="['..']" class="linkBack">
-        <h4><ion-icon name="arrow-back-outline"></ion-icon> Registro</h4></a>
-    </ion-item>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-item>
+            <a [routerLink]="['..']" class="linkBack">
+                <h4>
+                    <ion-icon name="arrow-back-outline"></ion-icon>
+                    Registro</h4>
+            </a>
+        </ion-item>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-list>
     <ion-list>
-      <ion-input
-        type="text"
-        fill="solid"
-        label="Ingrese su nombre completo"
-        labelPlacement="floating"
-        errorText="Nombre no válido"
-        helperText="Máximo 50 carácteres."
-        maxlength="50"
-        [counter]="true"
-        [(ngModel)]="userData.first_name"
-      ></ion-input>
-  
-      <ion-input
-        type="number"
-        fill="solid"
-        label="Ingrese su número"
-        labelPlacement="floating"
-        errorText="Número no válido"
-        [(ngModel)]="userData.telefono"
-      ></ion-input>
-  
-      <ion-input
-        type="password"
-        fill="solid"
-        label="Contraseña"
-        labelPlacement="floating"
-        errorText="Las contraseñas no coinciden"
-      ></ion-input>
+        <ion-list>
+            <ion-input  type="email" 
+                        fill="solid" 
+                        label="Correo electrónico" 
+                        labelPlacement="floating" 
+                        helperText="Máximo 80 carácteres." 
+                        errorText="Máximo superado" 
+                        maxlength="80" [counter]="true" 
+                        [(ngModel)]="userData.email" 
+                        [(ngModel)]="userData.username"></ion-input>
 
-      <ion-input
-        type="password"
-        fill="solid"
-        label="Confirme su contraseña"
-        labelPlacement="floating"
-        errorText="Las contraseñas no coinciden"
-        [(ngModel)]="userData.password"
-      ></ion-input>
-  
-      <ion-input
-        type="email"
-        fill="solid"
-        label="Correo electrónico"
-        labelPlacement="floating"
-        helperText="Máximo 80 carácteres."
-        errorText="Máximo superado"
-        maxlength="80"
-        [counter]="true"
-        [(ngModel)]="userData.email"
-        [(ngModel)]="userData.username"
-      ></ion-input>
-  
+            <ion-input type="text" 
+            fill="solid" 
+            label="Ingrese su nombre completo" 
+            labelPlacement="floating" 
+            errorText="Nombre no válido" 
+            helperText="Máximo 50 carácteres."
+            maxlength="50" 
+            [counter]="true" 
+            [(ngModel)]="userData.first_name"></ion-input>
+
+            <ion-input type="number" 
+            fill="solid" 
+            label="Ingrese su número" 
+            labelPlacement="floating" 
+            errorText="Número no válido" 
+            [(ngModel)]="userData.telefono"></ion-input>
+
+            <ion-input type="password" 
+            fill="solid" 
+            label="Contraseña" 
+            labelPlacement="floating" 
+            errorText="Las contraseñas no coinciden"></ion-input>
+
+            <ion-input type="password" 
+            fill="solid" 
+            label="Confirme su contraseña" 
+            labelPlacement="floating" 
+            errorText="Las contraseñas no coinciden" 
+            [(ngModel)]="userData.password"></ion-input>
+
+        </ion-list>
     </ion-list>
-  </ion-list>
-  <hr>
-  <div class="ion-text-center">
-    <ion-button shape="round" color="warning" (click)="createUser()">Registrarse</ion-button>
-    <ion-button shape="round" color="danger" [routerLink]="['/login']">Cancelar</ion-button>
-  </div>
-  
-</ion-content>
+    <hr>
+        <div class="ion-text-center">
+            <ion-button shape="round" color="warning" (click)="createUser()">Registrarse</ion-button>
+            <ion-button shape="round" color="danger" [routerLink]="['/login']">Cancelar</ion-button>
+        </div>
+
+    </ion-content>

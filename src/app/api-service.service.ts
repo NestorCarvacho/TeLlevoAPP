@@ -8,24 +8,24 @@ import { Observable } from 'rxjs';
 export class ApiServiceService {
 
   
-  private apiUrl: string = 'http://127.0.0.1:8000/';
+  private apiUrl: string = 'https://necarvacho.pythonanywhere.com/';
 
   constructor(private http: HttpClient) {}
 
   createVehiculo(vehiculoData: any) {
-    return this.http.post<any>('http://127.0.0.1:8000/api/vehiculo/', vehiculoData);
+    return this.http.post<any>('https://necarvacho.pythonanywhere.com/api/vehiculo/', vehiculoData);
   }
 
   getVehiculos(): Observable<any> {
-    return this.http.get<any>('http://127.0.0.1:8000/api/vehiculo/');
+    return this.http.get<any>('https://necarvacho.pythonanywhere.com/api/vehiculo/');
   }
   
   createUser(userData: any){
-    return this.http.post<any>('http://127.0.0.1:8000/api/usuario/',userData);
+    return this.http.post<any>('https://necarvacho.pythonanywhere.com/api/usuario/',userData);
   }
 
   createConductor(conductorData: any){
-    return this.http.post<any>('http://127.0.0.1:8000/api/conductor/',conductorData);
+    return this.http.post<any>('https://necarvacho.pythonanywhere.com/api/conductor/',conductorData);
   }
 
   login(username: string, password: string): Observable<any> {
@@ -57,7 +57,7 @@ export class ApiServiceService {
   }
 
   getViajes(): Observable<any> {
-    return this.http.get<any>('http://127.0.0.1:8000/api/viaje/');
+    return this.http.get<any>('https://necarvacho.pythonanywhere.com/api/viaje/');
   }
 
 }
