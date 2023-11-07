@@ -7,10 +7,28 @@ import { ApiServiceService } from 'src/app/api-service.service';
   styleUrls: ['./registro.page.scss'],
 })
 export class RegistroPage implements OnInit {
-  
-  constructor() { }
+  userData = {
+    first_name: '',
+    password: '',
+    telefono: '',
+    email: '',
+    username: ''
+
+  };
+  constructor(private apiService: ApiServiceService) { }
 
   ngOnInit() {
+  }
+  createUser() {
+
+    this.apiService.createUser(this.userData).subscribe(
+      (response) => {
+        console.log('Usuario creado correctamente:', response);
+      },
+      (error) => {
+        console.error('Error al crear usuario:', error);
+      }
+    );
   }
 
 }

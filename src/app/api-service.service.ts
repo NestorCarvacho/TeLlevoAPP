@@ -6,6 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ApiServiceService {
+  private apiUrl: string = 'http://127.0.0.1:8000/';
+
   constructor(private http: HttpClient) {}
 
   createVehiculo(vehiculoData: any) {
@@ -18,5 +20,10 @@ export class ApiServiceService {
   
   createUser(userData: any){
     return this.http.post<any>('http://127.0.0.1:8000/api/usuario/',userData);
+  }
+
+  login(username: string, password: string): Observable<any> {
+    const loginData = { username, password };
+    return this.http.post<any>(`${this.apiUrl}api/login/`, loginData);
   }
 }

@@ -19,6 +19,7 @@
         helperText="Máximo 50 carácteres."
         maxlength="50"
         [counter]="true"
+        [(ngModel)]="userData.first_name"
       ></ion-input>
   
       <ion-input
@@ -27,6 +28,7 @@
         label="Ingrese su número"
         labelPlacement="floating"
         errorText="Número no válido"
+        [(ngModel)]="userData.telefono"
       ></ion-input>
   
       <ion-input
@@ -43,6 +45,7 @@
         label="Confirme su contraseña"
         labelPlacement="floating"
         errorText="Las contraseñas no coinciden"
+        [(ngModel)]="userData.password"
       ></ion-input>
   
       <ion-input
@@ -54,13 +57,15 @@
         errorText="Máximo superado"
         maxlength="80"
         [counter]="true"
+        [(ngModel)]="userData.email"
+        [(ngModel)]="userData.username"
       ></ion-input>
   
     </ion-list>
   </ion-list>
   <hr>
   <div class="ion-text-center">
-    <ion-button shape="round" color="warning" [routerLink]="['../registro-exitoso']">Registrarse</ion-button>
+    <ion-button shape="round" color="warning" [routerLink]="['../registro-exitoso']" (click)="createUser()">Registrarse</ion-button>
     <ion-button shape="round" color="danger" [routerLink]="['login']">Cancelar</ion-button>
   </div>
   
