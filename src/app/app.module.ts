@@ -10,12 +10,14 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { DatosUsuarioServiceService } from './datos-usuario-service.service';
 
+import { StorageMap } from '@ngx-pwa/local-storage';
 
+import { IonicStorageModule } from '@ionic/storage-angular';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,FormsModule, HttpClientModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy, },DatosUsuarioServiceService],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,FormsModule, HttpClientModule, IonicStorageModule.forRoot()],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy, },DatosUsuarioServiceService, StorageMap,],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,2 +1,8 @@
 # TeLlevoAPP
-esta es lo mismo pero con tabs
+# DEPENDENCIAS
+
+'''
+npm install @ngx-pwa/local-storage
+npm install @ionic/storage
+npm install @ionic/storage-angular
+'''

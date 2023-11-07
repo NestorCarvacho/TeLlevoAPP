@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiServiceService } from 'src/app/api-service.service';
+import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-registro',
@@ -15,7 +18,7 @@ export class RegistroPage implements OnInit {
     username: ''
 
   };
-  constructor(private apiService: ApiServiceService) { }
+  constructor(private apiService: ApiServiceService, private router: Router, private alertController: AlertController) { }
 
   ngOnInit() {
   }
@@ -23,12 +26,22 @@ export class RegistroPage implements OnInit {
 
     this.apiService.createUser(this.userData).subscribe(
       (response) => {
-        console.log('Usuario creado correctamente:', response);
+        this.router.navigate(['../registro-exitoso']);
       },
       (error) => {
-        console.error('Error al crear usuario:', error);
+        this.mostrarErrorAlerta('Error al crear registro, por favor compruebe los errores.'+error);
       }
     );
+  }
+
+  async mostrarErrorAlerta(mensaje: string) {
+    const alert = await this.alertController.create({
+      header: 'Error',
+      message: mensaje,
+      buttons: ['OK']
+    });
+  
+    await alert.present();
   }
 
 }
