@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiServiceService } from 'src/app/api-service.service';
 
 @Component({
   selector: 'app-administrar-vehiculos',
@@ -13,13 +14,24 @@ export class AdministrarVehiculosPage implements OnInit {
   }
 
 
-  constructor() { }
+  constructor(private apiService: ApiServiceService) { }
+  vehiculos: any[] = [];
   
 
   ngOnInit() {
-    
+    this.getVehiculos();
   }
 
-  
+  getVehiculos() {
+    this.apiService.getVehiculos().subscribe(
+      (response) => {
+        this.vehiculos = response;
+        console.log('Vehículos obtenidos correctamente:', response);
+      },
+      (error) => {
+        console.error('Error al obtener vehículos:', error);
+      }
+    );
+  }
 
 }

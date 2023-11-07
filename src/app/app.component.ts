@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ImgService } from './img.service';
+import { ApiServiceService } from './api-service.service';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +8,24 @@ import { ImgService } from './img.service';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor(private imagenPerfilService: ImgService) {}
+  constructor(private imagenPerfilService: ImgService, private ApiServiceService: ApiServiceService) {}
+
+  createVehiculo() {
+    const vehiculoData = {
+      patente: 'Patente de ejemplo',
+      marca: 'Marca Ejemplo',
+      modelo: 'modelo de ejemplo'
+    };
+
+    this.ApiServiceService.createVehiculo(vehiculoData).subscribe(
+      (response) => {
+        console.log('Vehículo creado correctamente:', response);
+      },
+      (error) => {
+        console.error('Error al crear vehículo:', error);
+      }
+    );
+  }
 
   cargarNuevaImagen(event: Event) {
     const inputElement = event.target as HTMLInputElement;
@@ -21,5 +39,7 @@ export class AppComponent {
       this.imagenPerfilService.setImagenPerfil(urlImagen);
     }
   }
+
+  
 
 }

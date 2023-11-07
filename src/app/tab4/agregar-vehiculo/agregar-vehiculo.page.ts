@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ApiServiceService } from 'src/app/api-service.service';
+
 
 @Component({
   selector: 'app-agregar-vehiculo',
@@ -13,10 +15,11 @@ export class AgregarVehiculoPage implements OnInit {
   marca:string | undefined;
 
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private apiService: ApiServiceService) { }
 
   ngOnInit() {
   }
+
   guardarVehiculo() {
 
     this.router.navigate(["tabs/tab4/administrar-vehiculos"])
@@ -30,5 +33,22 @@ export class AgregarVehiculoPage implements OnInit {
       // Aquí puedes manejar el archivo seleccionado, por ejemplo, puedes cargarlo a un servidor.
       console.log('Archivo seleccionado:', file.name);
     }
+  }
+ 
+  vehiculoData = {
+      patente: '',
+      marca: '',
+      modelo: ''
+    };
+    createAndTestVehiculo() {
+
+    this.apiService.createVehiculo(this.vehiculoData).subscribe(
+      (response) => {
+        console.log('Vehículo creado correctamente:', response);
+      },
+      (error) => {
+        console.error('Error al crear vehículo:', error);
+      }
+    );
   }
 }

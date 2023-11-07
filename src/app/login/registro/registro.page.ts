@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiServiceService } from 'src/app/api-service.service';
 
 @Component({
   selector: 'app-registro',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./registro.page.scss'],
 })
 export class RegistroPage implements OnInit {
-
+  
   constructor() { }
 
   ngOnInit() {
