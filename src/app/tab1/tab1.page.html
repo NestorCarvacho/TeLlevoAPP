@@ -5,7 +5,6 @@
         </ion-title>
     </ion-toolbar>
 </ion-header>
-
 <ion-content [fullscreen]="true" scrollY="true">
     <ion-item>
         <a [routerLink]="['/tabs/tab1/manejar']">
@@ -14,14 +13,14 @@
     </ion-item>
 
     <ion-item>
-        <capacitor-google-maps #map></capacitor-google-maps>
+        <div class="container">
+            <div id="mapbox"></div>
+        </div>
     </ion-item>
 
-
-
     <!-- <ion-item class="googleIFrame" once="menu" id="menu1-0" data-sortbtn="btn-primary">
-        <ion-img src="../../assets/core/img/programacion-2-e1551291144973.jpg"></ion-img>
-    </ion-item> -->
+                                                <ion-img src="../../assets/core/img/programacion-2-e1551291144973.jpg"></ion-img>
+                                            </ion-item> -->
     <ion-item>
         <div class="row solicita-viaje">
             <div class="col col-12 solicita-viaje">
@@ -75,7 +74,7 @@
                     <ng-template>
                         <ion-header>
                             <ion-toolbar>
-                                <ion-title >Buscando Viaje</ion-title>
+                                <ion-title>Buscando Viaje</ion-title>
                                 <ion-buttons slot="end">
                                     <ion-button (click)="modal.dismiss()">Cerrar</ion-button>
                                 </ion-buttons>

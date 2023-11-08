@@ -1,24 +1,33 @@
-.googleIFrame {
-  height: 400px;
-  width: auto;
-  position: relative;
-  top: 0px;
-  left: 0px;
-  background-color: rgb(229, 227, 223);
-}
+// .googleIFrame {
+//   height: 400px;
+//   width: auto;
+//   position: relative;
+//   top: 0px;
+//   left: 0px;
+//   background-color: rgb(229, 227, 223);
+// }
 
 a {
   text-decoration: none;
 }
 
-.linkBack{
+.linkBack {
   text-decoration: none;
-  color: #FFB800;
+  color: #ffb800;
   display: inline-block;
   position: initial;
-
 }
 
-.solicita-viaje{
+.solicita-viaje {
   margin-top: 10px;
+}
+
+.container{
+  width: 100%;
+  height: 500px;
+}
+
+
+.mapboxgl-ctrl-attrib-inner{
+  display: block
 }

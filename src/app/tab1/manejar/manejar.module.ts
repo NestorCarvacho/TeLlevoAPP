@@ -15,6 +15,6 @@ import { ManejarPage } from './manejar.page';
     IonicModule,
     ManejarPageRoutingModule
   ],
-  declarations: [ManejarPage]
+  declarations: [ManejarPage],
 })
 export class ManejarPageModule {}
