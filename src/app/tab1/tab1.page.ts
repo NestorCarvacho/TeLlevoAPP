@@ -2,6 +2,7 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 import {GoogleMap} from '@capacitor/google-maps'
 import { environment } from 'src/environments/environment';
 
+
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
@@ -10,10 +11,13 @@ import { environment } from 'src/environments/environment';
 export class Tab1Page {
   presentingElement: Element | null = null;
   presentingElement2: Element | null = null;
-  @ViewChild('map')mapRef: ElementRef;
-  map: GoogleMap;
+  @ViewChild('map') mapRef!: ElementRef;
+  map!: GoogleMap;
 
-  constructor() {}
+  constructor() {
+    this.map = {} as GoogleMap;
+  }
+  
 
   ngAfterViewInit() {
     // Obtén la referencia al elemento DOM después de que la vista se haya inicializado.
@@ -49,8 +53,16 @@ export class Tab1Page {
 
       // forceCreate: true,
 
-      config: 
-      
+      config: {
+        center:{
+          lat:33.6,
+          lng: -117.9,
+        },
+        zoom:8 ,
+      }
+
     })
   }
+
+  
 }

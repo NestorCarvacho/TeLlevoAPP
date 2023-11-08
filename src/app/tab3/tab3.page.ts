@@ -4,6 +4,8 @@ import { DatosUsuarioServiceService } from '../datos-usuario-service.service';
 import { AuthService } from '../auth.service';
 import { Storage } from '@ionic/storage-angular';
 import { ApiServiceService } from '../api-service.service';
+import { Router } from '@angular/router';
+import { SharedService } from '../shared.service';
 
 @Component({
   selector: 'app-tab3',
@@ -14,7 +16,11 @@ export class Tab3Page {
 
   @ViewChild('fileInput') fileInput: any;
   
-  constructor(private imagenPerfilService: ImgService, private apiService: ApiServiceService, private datosUsuarioService: DatosUsuarioServiceService, private storage: Storage, private storageService: AuthService) {}
+  constructor(private imagenPerfilService: ImgService, 
+    private apiService: ApiServiceService, private datosUsuarioService: DatosUsuarioServiceService, 
+    private storage: Storage, private storageService: AuthService,
+    private router: Router,
+    private sharedService: SharedService) {}
   
   selectFile() {
     this.fileInput.nativeElement.click();
@@ -44,13 +50,26 @@ export class Tab3Page {
     }
   }
 
-  async conseguirPerfil(){
-    let id = await this.storage.get('user_id');
-  }
   conductor: any;
+  nuevoNombre: any;
+  nuevoNumero: any;
 
-  async ngOnInit() {
-    // Accede a las propiedades del servicio y asígnalas a las variables locales
+  ngOnInit() {
+    if (!this.sharedService.nuevoNombre$) {
+      this.nuevoNombre = this.conductor.nombre_completo;
+    }
+
+    if (!this.sharedService.nuevoNumero$) {
+      this.nuevoNumero = this.conductor.numero_telefono; // Reemplaza con la propiedad correcta del conductor
+    }
+
+    this.sharedService.nuevoNumero$.subscribe((nuevoNumero) => {
+      this.nuevoNumero = nuevoNumero || this.conductor.numero_telefono; // Asigna un valor por defecto si no hay nuevo número
+    });
+  
+    this.sharedService.nuevoNombre$.subscribe((nuevoNombre) => {
+      this.nuevoNombre = nuevoNombre || this.conductor.nombre_completo;
+    });
     this.storage.get('user_id').then(
       async (userId: number | null) => {
         if (userId !== null) {
@@ -60,6 +79,7 @@ export class Tab3Page {
               this.conductor = data;
               if (this.conductor && this.conductor.usuario) {
                 const userEmail = this.conductor.usuario.email;
+                console.log(data);
               }
             },
             (error: any) => {

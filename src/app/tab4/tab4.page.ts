@@ -13,9 +13,7 @@ export class Tab4Page implements OnInit {
   constructor(private imagenPerfilService: ImgService, private apiService: ApiServiceService, private storage: Storage) { 
     
   }
-  async conseguirPerfil(){
-    let id = await this.storage.get('user_id');
-  }
+
   usuarios: any;
 
   conductorData: any;
@@ -29,27 +27,6 @@ export class Tab4Page implements OnInit {
           this.apiService.getUserById(userId).subscribe(
             (data: any) => {
               this.usuarios = data;
-              if (data && data.id && data.username && data.telefono && data.email) {
-                this.conductorData = {
-                  id: data.id,
-                  nombre_usuario: data.username,
-                  numero_telefono: data.telefono,
-                  correo_electronico: data.email,
-                  viajes_realizados: 0,
-                  usuario: data.id,
-                };
-    
-                // Hace la solicitud para crear el conductor con los datos obtenidos
-                this.apiService.createConductor(this.conductorData).subscribe(
-                  (response) => {
-                    // Si se crea correctamente
-                    console.log('Conductor creado correctamente:', response);
-                  },
-                  (error) => {
-                    // Maneja los errores aquí
-                  }
-                );
-              }
             },
             (error: any) => {
               // Maneja los errores aquí

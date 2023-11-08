@@ -60,4 +60,19 @@ export class ApiServiceService {
     return this.http.get<any>('https://necarvacho.pythonanywhere.com/api/viaje/');
   }
 
+  private apiUrl2: string  = 'https://necarvacho.pythonanywhere.com/api/conductor/';
+  actualizarNombre(conductorId: number, nuevoNombre: string): Observable<any> {
+    const url = `${this.apiUrl2}${conductorId}/`;
+    const data = { nombre_completo: nuevoNombre };
+
+    return this.http.patch(url, data);
+  }
+
+  actualizarNumero(conductorId: number, nuevoNumero: number): Observable<any> {
+    const url = `${this.apiUrl2}${conductorId}/`;
+    const data = { numero_telefono: nuevoNumero };
+
+    return this.http.patch(url, data);
+  }
+
 }

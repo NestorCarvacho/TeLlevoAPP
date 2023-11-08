@@ -13,7 +13,7 @@
     <p>Detalle de viaje: {{ viajes[0].id }}</p>
   </ion-item>
   <ion-item *ngIf="viajes.length > 0">
-    <p>11:43PM 07-11-2023 con {{ viajes[0].conductor.nombre_usuario }}</p>
+    <p>11:43PM 07-11-2023 con {{ viajes[0].conductor.nombre_completo }}</p>
   </ion-item>
   <ion-item *ngIf="viajes.length > 0">
     <iframe
@@ -32,7 +32,7 @@
       <h3>Detalles del viaje</h3>
       <p>
         <ion-icon name="person-circle"></ion-icon>
-        {{ viajes[0].conductor.nombre_usuario }}
+        {{ viajes[0].conductor.nombre_completo }}
       </p>
       <p>
         <ion-icon name="navigate-circle"></ion-icon>

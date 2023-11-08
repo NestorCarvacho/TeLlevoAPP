@@ -23,10 +23,11 @@
   errorText="Máximo superado"
   maxlength="50"
   [counter]="true"
+  [(ngModel)]="nuevoNombre"
 ></ion-input>
 <br>
 <div class="ion-text-center">
-  <ion-button shape="round" color="warning" [routerLink]="['/tabs/tab3']">Confirmar</ion-button>
+  <ion-button shape="round" color="warning" (click)="actualizarNombre()">Confirmar</ion-button>
   <ion-button shape="round" color="danger" [routerLink]="['/tabs/tab3']">Cancelar</ion-button>
 </div>
 

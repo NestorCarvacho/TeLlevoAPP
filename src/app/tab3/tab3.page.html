@@ -28,13 +28,13 @@
         <ion-item detail="true">
             <ion-label [routerLink]="['/tabs/tab3/editar-nombre']"> 
                 <h3>Nombre</h3>
-                <p>{{ conductor.usuario.first_name }}</p>
+                <p>{{ nuevoNombre || conductor.nombre_completo}}</p>
             </ion-label>
         </ion-item>
         <ion-item detail="true">
             <ion-label [routerLink]="['/tabs/tab3/editar-numero']" >
                 <h3>Número de teléfono</h3>
-                <p>{{ conductor.usuario.telefono }}</p>
+                <p>{{  nuevoNumero || conductor.numero_telefono }}</p>
             </ion-label>
         </ion-item>
         <ion-item detail="true" [routerLink]="['/tabs/tab3/editar-correo']">
