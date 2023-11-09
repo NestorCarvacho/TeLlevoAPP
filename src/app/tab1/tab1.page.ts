@@ -16,15 +16,6 @@ export class Tab1Page {
 
   presentingElement: Element | null = null;
   presentingElement2: Element | null = null;
-<<<<<<< Updated upstream
-  @ViewChild('map') mapRef!: ElementRef;
-  map!: GoogleMap;
-
-  constructor() {
-    this.map = {} as GoogleMap;
-  }
-  
-=======
 
   public map: mapbox.Map;
   constructor() {
@@ -54,7 +45,6 @@ export class Tab1Page {
       .setLngLat([-70.578905, -33.598379])
       .addTo(this.map);
   }
->>>>>>> Stashed changes
 
   ngAfterViewInit() {
     this.constriurMapa();
@@ -101,24 +91,5 @@ export class Tab1Page {
   // }
   // async addMarkers(){
 
-<<<<<<< Updated upstream
-      element: this.mapRef.nativeElement,
-
-      // forceCreate: true,
-
-      config: {
-        center:{
-          lat:33.6,
-          lng: -117.9,
-        },
-        zoom:8 ,
-      }
-
-    })
-  }
-
-  
-=======
   // }
->>>>>>> Stashed changes
 }
