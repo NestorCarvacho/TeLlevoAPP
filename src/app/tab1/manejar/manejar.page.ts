@@ -11,43 +11,37 @@ import { Storage } from '@ionic/storage-angular';
 })
 
 export class ManejarPage implements OnInit {
-  vehiculoData: any = {
-    patente: '',
-    marca: '',
-    modelo: '',
-    usuario: '',
-  };
 
   constructor(private router: Router, private apiService: ApiServiceService, private storage: Storage) { }
 
+  vehiculos: any;
+  
   ngOnInit() {
-  }
-
-  async crearVehiculo(vehiculoData: any) {
-    const userId = await this.storage.get('user_id');
-
-    if (userId !== null) {
-      const vehiculoData = {
-        patente: this.vehiculoData.patente,
-        marca: this.vehiculoData.marca,
-        modelo: this.vehiculoData.modelo,
-        usuario: userId,
-      };
-
-      this.apiService.createVehiculo(vehiculoData).subscribe(
-        (response) => {
-          this.router.navigate(['tabs/tab1/manejar']);
-          console.log('Vehículo creado correctamente:', response);
-        },
-        (error) => {
-          console.error('Error al crear vehículo:', error);
+    this.storage.get('user_id').then(
+      async (userId: number | null) => {
+        if (userId !== null) {
+          this.apiService.getVehiculoById(userId).subscribe(
+            async (data: any) => {
+              this.vehiculos = data;
+            },
+            (error: any) => {
+              // Maneja los errores aquí
+              console.error(error);
+            }
+          );
+        } else {
+          //
         }
-      );
-    } else {
-      console.error('No se pudo obtener el user_id del almacenamiento local.');
-    }
+      },
+      (storageError: any) => {
+        //
+      }
+    );
   }
 
+  
+
+    
   onFileSelected(event: any) {
     const file: File = event.target.files[0];
     if (file) {
@@ -56,7 +50,6 @@ export class ManejarPage implements OnInit {
     }
   }
  
-  vehiculos: any;
 async sincronizar(){
   this.storage.get('user_id').then(
     async (userId: number | null) => {

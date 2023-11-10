@@ -56,19 +56,19 @@ export class Tab3Page {
 
   ngOnInit() {
     if (!this.sharedService.nuevoNombre$) {
-      this.nuevoNombre = this.conductor.nombre_completo;
+      this.nuevoNombre = this.conductor?.nombre_completo;
     }
 
     if (!this.sharedService.nuevoNumero$) {
-      this.nuevoNumero = this.conductor.numero_telefono; // Reemplaza con la propiedad correcta del conductor
+      this.nuevoNumero = this.conductor?.numero_telefono; // Reemplaza con la propiedad correcta del conductor
     }
 
     this.sharedService.nuevoNumero$.subscribe((nuevoNumero) => {
-      this.nuevoNumero = nuevoNumero || this.conductor.numero_telefono; // Asigna un valor por defecto si no hay nuevo número
+      this.nuevoNumero = nuevoNumero || this.conductor?.numero_telefono; // Asigna un valor por defecto si no hay nuevo número
     });
   
     this.sharedService.nuevoNombre$.subscribe((nuevoNombre) => {
-      this.nuevoNombre = nuevoNombre || this.conductor.nombre_completo;
+      this.nuevoNombre = nuevoNombre || this.conductor?.nombre_completo;
     });
     this.storage.get('user_id').then(
       async (userId: number | null) => {
