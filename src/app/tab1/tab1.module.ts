@@ -20,6 +20,6 @@ import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
     Tab1PageRoutingModule
   ],
   declarations: [Tab1Page],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class Tab1PageModule {}
