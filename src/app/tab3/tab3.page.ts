@@ -79,7 +79,6 @@ export class Tab3Page {
               this.conductor = data;
               if (this.conductor && this.conductor.usuario) {
                 const userEmail = this.conductor.usuario.email;
-                console.log(data);
               }
             },
             (error: any) => {
