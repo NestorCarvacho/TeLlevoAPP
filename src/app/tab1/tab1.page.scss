@@ -11,21 +11,21 @@ a {
   text-decoration: none;
 }
 
-.linkBack {
-  text-decoration: none;
-  color: #ffb800;
-  display: inline-block;
-  position: initial;
-}
+// .linkBack {
+//   text-decoration: none;
+//   color: #ffb800;
+//   display: inline-block;
+//   position: initial;
+// }
 
 .solicita-viaje {
   margin-top: 10px;
 }
 
-.container {
-  width: 100% !important;
-  height: 350px !important;
-}
+// .container {
+//   width: 100% !important;
+//   height: 350px !important;
+// }
 
 // .mapboxgl-ctrl-attrib-inner {
 //   visibility: hidden !important;
@@ -42,14 +42,26 @@ a {
 //   cursor: pointer;
 // }
 
+.container{
+  height: 100vh;
+}
+
 #mapbox {
-  // position: absolute;
-  // top: 0;
-  // bottom: 0;
-  // width: 100%;
-  height: 400px;
-  width: auto;
-  position: relative;
-  top: 0px;
-  left: 0px;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.mapboxgl-canvas {
+  /* Anular estilos específicos */
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.mapboxgl-canvas-container {
+
+  height: 100vh;
+
 }

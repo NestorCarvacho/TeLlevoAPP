@@ -1,25 +1,77 @@
-<ion-content>
-  
-  <div>
+<!--<ion-content>
+  <div class="loginClass">
     <form class="formularioLogin" #loginForm (ngSubmit)="realizarLogin()">
       <ion-img src="../../assets/core/img/logoApp.png" style="height: 200px;"></ion-img>
       <br>
       <br>
       <br>
       <div>
-        <ion-input name="username" class="login-form" id="username" [(ngModel)]="username" type="email" labelPlacement="stacked" fill="solid" placeholder="Correo@duocuc.cl" required=""></ion-input>
+        <ion-input name="username" class="login-form" id="username" [(ngModel)]="username" label="Nombre de Usuario" type="email" labelPlacement="stacked" fill="solid" placeholder="Correo@duocuc.cl" required=""></ion-input>
       </div>
       <br>
       <div>
-        <ion-input name="password" id="password" [(ngModel)]="password" label="Contraseña" type="password" labelPlacement="stacked" fill="solid" required=""></ion-input>
+        <ion-input name="password" class="login-form" id="password" [(ngModel)]="password" label="Contraseña" type="password" labelPlacement="stacked" fill="solid" required=""></ion-input>
       </div>
       <br>
-      <!-- type="submit" [disabled]="!loginForm['valid']" -->
+      type="submit" [disabled]="!loginForm['valid']"
       <ion-button type="submit">Iniciar Sesión</ion-button>
-      <div style="margin-top: 20px;">
+      <div style="margin-top: 20px; color: blueviolet">
         No tienes cuenta?
         <a class="NoPoseeCuentaClick" style="color: #D50032; font-family: lato-bold;" (click)="handleClick()" [routerLink]="['']">Click Acá</a>
       </div>
     </form>
   </div>
+</ion-content>-->
+<ion-content>
+  <div class="sign_in_page_wrap">
+    <div class="login_content">
+      <h1 class="ion-text-center">
+        <img
+          src="../../assets/core/img/logoApp.png"
+          style="height: 150px; width: 300px;"
+        />
+      </h1>
+      <form class="formularioLogin" #loginForm (ngSubmit)="realizarLogin()">
+        <ion-input
+          name="username"
+          id="username"
+          [(ngModel)]="username"
+          type="email"
+          placeholder="Correo@duocuc.cl"
+          required=""
+        ></ion-input>
+
+        <ion-input
+          [(ngModel)]="password"
+          type="password"
+          placeholder="Password"
+          name="password"
+          id="password"
+          required=""
+        ></ion-input>
+
+        <ion-button
+          [disabled]="!username || !password"
+          expand="block"
+          color="primary"
+          type="submit"
+          >INICIAR SESION</ion-button
+        >
+        <p>
+          ¿Aun no tienes cuenta?<a
+            href="#"
+            (click)="handleClick()"
+            [routerLink]="['']"
+          >
+            registrate acá</a
+          >
+        </p>
+      </form>
+    </div>
+  </div>
 </ion-content>
+<ion-footer>
+  <ion-toolbar class="footer">
+    <p class="ion-text-center">Nicolás Muñoz || Néstor Carvacho</p>
+  </ion-toolbar>
+</ion-footer>
