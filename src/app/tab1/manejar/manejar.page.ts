@@ -14,6 +14,12 @@ export class ManejarPage implements OnInit {
 
   constructor(private router: Router, private apiService: ApiServiceService, private storage: Storage) { }
 
+  
+  isSelected: boolean = false;
+  toggleSelection() {
+    this.isSelected = !this.isSelected;
+  }
+
   vehiculos: any;
   
   ngOnInit() {

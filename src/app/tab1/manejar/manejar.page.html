@@ -10,7 +10,7 @@
 <ion-content [fullscreen]="true">
     <ion-item *ngFor="let vehiculo of vehiculos">
         <ion-card>
-            <div class="CardVehiculo">
+            <div class="CardVehiculo" [ngClass]="{ 'selected-card': isSelected }" (click)="toggleSelection()">
                 <ion-input label="Patente" fill="outline" placeholder="{{ vehiculo.patente }}" disabled="true"></ion-input>
                 <ion-input label="Marca" fill="outline" placeholder="{{ vehiculo.marca }}" disabled="true"></ion-input>
                 <ion-input label="Modelo" fill="outline" placeholder="{{ vehiculo.modelo }}" disabled="true"></ion-input>
