@@ -16,9 +16,12 @@ export class LoginPage implements OnInit {
   password: any;
   respuestaLogin: any;
 
-  constructor(private router: Router, private apiService: ApiServiceService, private alertController: AlertController, private storageService: AuthService) { 
-
-  }
+  constructor(
+    private router: Router, 
+    private apiService: ApiServiceService, 
+    private alertController: AlertController, 
+    private storageService: AuthService) 
+    { }
   async ngOnInit() {
     const storage = this.storageService.getStorage();
   }
