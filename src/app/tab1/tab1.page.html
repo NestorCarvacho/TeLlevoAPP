@@ -6,6 +6,7 @@
           [(ngModel)]="searchTerm"
           placeholder="Buscar dirección"
           mode="ios"
+          color="#0000"
         ></ion-searchbar>
       </form>
     </div>
@@ -69,14 +70,7 @@
   </div>
 </ion-header>
 <ion-content [fullscreen]="true" scrollY="true">
-  <ion-item class="floating-button">
-    <a [routerLink]="['/tabs/tab1/manejar']">
-      <ion-icon name="speedometer-outline"></ion-icon>
-      Manejar
-    </a>
-  </ion-item>
 
-  <div class="container">
-    <div id="mapbox"></div>
-  </div>
+    <div class="container"id="mapbox"></div>
+
 </ion-content>

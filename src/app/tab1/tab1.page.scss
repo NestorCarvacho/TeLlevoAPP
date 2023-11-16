@@ -46,10 +46,10 @@ a {
   margin-bottom: 5px;
 }
 
-ion-searchbar {
-  --ion-background-opacity: 50;
+ion-header {
+  //--ion-background-opacity: 50;
   padding: 0;
-  //background-color: rgba(255, 228, 196, 0.253);
+  background-color: rgba(225, 243, 174, 0.536);
   color: #000;
 }
 
@@ -58,12 +58,12 @@ ion-searchbar {
 }
 
 #barraBuscar {
-  --ion-background-opacity: 50;
+  //--ion-background-opacity: 50;
   padding: 0;
-  //background-color: rgba(255, 228, 196, 0.253);
+  background-color: rgba(225, 243, 174, 0.536);
   color: #000;
   border: none; /* Elimina el borde */
-  border-bottom: 1px solid transparent; /* Elimina la línea inferior */
+  //border-bottom: 1px solid transparent; /* Elimina la línea inferior */
 }
 
 .form-container {
@@ -86,7 +86,7 @@ ion-searchbar {
   //color: #ffffff; /* Color del texto en el botón */
   border-radius: 50%; /* Para hacer el botón redondo */
   padding: 10px; /* Ajusta según sea necesario */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para dar una sensación de elevación */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.28); /* Sombra para dar una sensación de elevación */
   z-index: 999; /* Asegúrate de que esté por encima de otros elementos en la página */
   cursor: pointer;
 }
@@ -94,3 +94,5 @@ ion-searchbar {
 #modal-viajes ion-icon {
   margin-bottom: 5px;
 }
+
+//localhost:8100/tabs/tab1
