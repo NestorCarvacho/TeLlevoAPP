@@ -1,4 +1,4 @@
-<ion-header [translucent]="true">
+<!-- <ion-header [translucent]="true">
     <ion-toolbar>
         <ion-item>
             <a [routerLink]="['/tabs/tab4']" class="linkBack">
@@ -50,4 +50,70 @@
             </ion-label>
         </ion-item>
     </section>
+</ion-content> -->
+<ion-content [fullscreen]="true">
+  <div class="container">
+    <div class="img__profile">
+      <img [routerLink]="['/tabs/tab3']" [src]="getImagenPerfil()" />
+      <ion-fab style="position: relative; margin: auto">
+        <ion-fab-button (click)="selectFile()">
+          <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+    </div>
+    <div>
+      <ion-list-header class="informacion-basica">
+        <ion-label style="font-size: large">Información básica</ion-label>
+      </ion-list-header>
+    </div>
+
+    <div class="item">
+      <ion-icon name="person-outline" size="large"></ion-icon>
+      <span>Nombre Usuario</span>
+      <div></div>
+      <div></div>
+      <span>{{ nuevoNombre || conductor?.nombre_completo}}</span>
+      <div class="icon">
+        <ion-icon name="settings-outline" [routerLink]="['/tabs/tab3/editar-nombre']"></ion-icon>
+      </div>
+    </div>
+
+    <hr />
+
+    <div class="item">
+      <ion-icon name="person-outline" size="large"></ion-icon>
+      <span>Telefono</span>
+      <div></div>
+      <div></div>
+      <span>+56 {{ nuevoNumero || conductor?.numero_telefono }}</span>
+      <div class="icon">
+        <ion-icon name="settings-outline" [routerLink]="['/tabs/tab3/editar-numero']" ></ion-icon>
+      </div>
+    </div>
+
+    <hr />
+
+    <div class="item">
+      <ion-icon name="person-outline" size="large"></ion-icon>
+      <span>Correo Electronico</span>
+      <div></div>
+      <div></div>
+      <span>{{ conductor?.correo_electronico }}</span>
+      <div class="icon">
+        <div></div>
+      </div>
+    </div>
+
+    <hr />
+
+    <div class="item" detail="true" [routerLink]="['/tabs/tab2']">
+      <ion-icon name="person-outline" size="large"></ion-icon>
+      <span>Viajes</span>
+      <div></div>
+      <div></div>
+      <span
+        >Has realizado {{ conductor?.viajes_realizados }} viajes en total.</span>
+      <div></div>
+    </div>
+  </div>
 </ion-content>

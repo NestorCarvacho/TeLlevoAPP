@@ -1,3 +1,5 @@
+
+<!--
 <ion-header [translucent]="true">
     <ion-toolbar>
         <ion-title>
@@ -20,7 +22,7 @@
 
     <!-- <ion-item class="googleIFrame" once="menu" id="menu1-0" data-sortbtn="btn-primary">
                                                 <ion-img src="../../assets/core/img/programacion-2-e1551291144973.jpg"></ion-img>
-                                            </ion-item> -->
+                                            </ion-item> fin comentario
     <ion-item>
         <div class="row solicita-viaje">
             <div class="col col-12 solicita-viaje">
@@ -105,3 +107,87 @@
         </div>
     </ion-item>
 </ion-content>
+-->
+
+<ion-header>
+    <div class="row form-container">
+      <div class="col-8 search-container">
+        <form>
+          <ion-searchbar
+            placeholder="Buscar dirección"
+            mode="ios"
+          ></ion-searchbar>
+        </form>
+      </div>
+      <div class="col-4 button-container">
+          <div>
+            <div class="col col-12 solicita-viaje" style="margin: auto">
+              <ion-button id="modal-viajes" expand="block"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-search"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+                  /></svg
+              ></ion-button>
+  
+              <ion-modal
+                #modal
+                trigger="modal-viajes"
+                [presentingElement]="presentingElement"
+              >
+                <ng-template>
+                  <ion-header>
+                    <ion-toolbar>
+                      <ion-title>Buscando Viaje</ion-title>
+                      <ion-buttons slot="end">
+                        <ion-button (click)="modal.dismiss()">Cerrar</ion-button>
+                      </ion-buttons>
+                    </ion-toolbar>
+                  </ion-header>
+                  <ion-content>
+                    <ion-list>
+                      <ion-item>
+                        <ion-searchbar placeholder="Buscar"></ion-searchbar>
+                      </ion-item>
+                      <ion-item>
+                        <ion-avatar slot="start">
+                          <ion-img src="../../assets/core/img/Alan.jpg"></ion-img>
+                        </ion-avatar>
+                        <ion-label>
+                          <h2>Alan Gajardo</h2>
+                          <p><strong>Destino: </strong>El cielo</p>
+                          <ion-button
+                            [routerLink]="['/tabs/tab1/en-viaje-pasajero']"
+                            (click)="modal.dismiss()"
+                            >Aceptar</ion-button
+                          >
+                        </ion-label>
+                      </ion-item>
+                    </ion-list>
+                  </ion-content>
+                </ng-template>
+              </ion-modal>
+            </div>
+          </div>
+      </div>
+    </div>
+  </ion-header>
+  <ion-content [fullscreen]="true" scrollY="true">
+    <ion-item class="floating-button">
+      <a [routerLink]="['/tabs/tab1/manejar']">
+        <ion-icon name="speedometer-outline"></ion-icon>
+        Manejar
+      </a>
+    </ion-item>
+  
+    <div class="container">
+      <div id="mapbox"></div>
+    </div>
+  </ion-content>
+  

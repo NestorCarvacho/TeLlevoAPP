@@ -1,10 +1,4 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Registro exitoso</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
+<!-- <ion-content [fullscreen]="true">
   <h1 style="color: yellow; text-align: center;">¡Felicidades! Te has registrado exitosamente en la aplicación Te Llevo App! Disfruta tu estadia.</h1>
 
   <div class="icon-container">
@@ -14,4 +8,31 @@
     <ion-button shape="round" color="warning" [routerLink]="['/login']">Aceptar</ion-button>
   </div>
   
+</ion-content> -->
+
+<ion-content>
+  <div class="sign_in_page_wrap">
+    <div class="login_content">
+      <h1 class="ion-text-center">
+        <img
+          src="../../assets/core/img/logoApp.png"
+          style="height: 150px; width: 300px;"
+        />
+      </h1>
+      <h1 style="color: rgb(38, 0, 255); text-align: center;" class="texto-con-sombra">¡Felicidades! Te has registrado exitosamente en la aplicación Te Llevo App! Disfruta tu estadia.</h1>
+
+      <div class="icon-container">
+        <ion-icon name="checkmark-done-outline" class="icon"></ion-icon>
+      </div>
+      <div class="ion-text-center">
+        <ion-button shape="round" color="warning" [routerLink]="['/login']">Aceptar</ion-button>
+      </div>
+    </div>
+  </div>
 </ion-content>
+<ion-footer>
+  <ion-toolbar class="footer">
+    <p class="ion-text-center">Nicolás Muñoz || Néstor Carvacho</p>
+  </ion-toolbar>
+</ion-footer>
+

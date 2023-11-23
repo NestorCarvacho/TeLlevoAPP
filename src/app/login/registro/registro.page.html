@@ -1,64 +1,136 @@
-<ion-header [translucent]="true">
-    <ion-toolbar>
-        <ion-item>
-            <a [routerLink]="['..']" class="linkBack">
-                <h4>
-                    <ion-icon name="arrow-back-outline"></ion-icon>
-                    Registro</h4>
-            </a>
-        </ion-item>
-    </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
+<!-- <ion-content [fullscreen]="true">
+  <ion-list>
     <ion-list>
-        <ion-list>
-            <ion-input  type="email" 
-                        fill="solid" 
-                        label="Correo electrónico" 
-                        labelPlacement="floating" 
-                        helperText="Máximo 80 carácteres." 
-                        errorText="Máximo superado" 
-                        maxlength="80" [counter]="true" 
-                        [(ngModel)]="userData.email" 
-                        [(ngModel)]="userData.username"></ion-input>
+      <ion-input
+        type="email"
+        fill="solid"
+        label="Correo electrónico"
+        labelPlacement="floating"
+        helperText="Máximo 80 carácteres."
+        errorText="Máximo superado"
+        maxlength="80"
+        [counter]="true"
+        [(ngModel)]="userData.email"
+        [(ngModel)]="userData.username"
+      ></ion-input>
 
-            <ion-input type="text" 
-            fill="solid" 
-            label="Ingrese su nombre completo" 
-            labelPlacement="floating" 
-            errorText="Nombre no válido" 
-            helperText="Máximo 50 carácteres."
-            maxlength="50" 
-            [counter]="true" 
-            [(ngModel)]="userData.first_name"></ion-input>
+      <ion-input
+        type="text"
+        fill="solid"
+        label="Ingrese su nombre completo"
+        labelPlacement="floating"
+        errorText="Nombre no válido"
+        helperText="Máximo 50 carácteres."
+        maxlength="50"
+        [counter]="true"
+        [(ngModel)]="userData.first_name"
+      ></ion-input>
 
-            <ion-input type="number" 
-            fill="solid" 
-            label="Ingrese su número" 
-            labelPlacement="floating" 
-            errorText="Número no válido" 
-            [(ngModel)]="userData.telefono"></ion-input>
+      <ion-input
+        type="number"
+        fill="solid"
+        label="Ingrese su número"
+        labelPlacement="floating"
+        errorText="Número no válido"
+        [(ngModel)]="userData.telefono"
+      ></ion-input>
 
-            <ion-input type="password" 
-            fill="solid" 
-            label="Contraseña" 
-            labelPlacement="floating" 
-            errorText="Las contraseñas no coinciden"></ion-input>
+      <ion-input
+        type="password"
+        fill="solid"
+        label="Contraseña"
+        labelPlacement="floating"
+        errorText="Las contraseñas no coinciden"
+      ></ion-input>
 
-            <ion-input type="password" 
-            fill="solid" 
-            label="Confirme su contraseña" 
-            labelPlacement="floating" 
-            errorText="Las contraseñas no coinciden" 
-            [(ngModel)]="userData.password"></ion-input>
-
-        </ion-list>
+      <ion-input
+        type="password"
+        fill="solid"
+        label="Confirme su contraseña"
+        labelPlacement="floating"
+        errorText="Las contraseñas no coinciden"
+        [(ngModel)]="userData.password"
+      ></ion-input>
     </ion-list>
-    <hr>
-        <div class="ion-text-center">
-            <ion-button shape="round" color="warning" (click)="createUser()">Registrarse</ion-button>
-            <ion-button shape="round" color="danger" [routerLink]="['/login']">Cancelar</ion-button>
-        </div>
-
-    </ion-content>
+  </ion-list>
+  <hr />
+  <div class="ion-text-center">
+    <ion-button shape="round" color="warning" (click)="createUser()"
+      >Registrarse</ion-button
+    >
+    <ion-button shape="round" color="danger" [routerLink]="['/login']"
+      >Cancelar</ion-button
+    >
+  </div>
+</ion-content> -->
+<ion-content>
+    <div class="sign_in_page_wrap">
+      <div class="login_content">
+        <h1 class="ion-text-center">
+          <img
+            src="../../assets/core/img/logoApp.png"
+            style="height: 150px; width: 300px"
+          />
+        </h1>
+        <H3 style="color: rgb(0, 0, 107); font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">REGISTRATE</H3>
+        <ion-input
+          type="email"
+          fill="solid"
+          label="Correo electrónico"
+          labelPlacement="floating"
+          helperText="Máximo 80 carácteres."
+          errorText="Máximo superado"
+          maxlength="80"
+          [counter]="true"
+          [(ngModel)]="userData.email"
+          [(ngModel)]="userData.username"
+        ></ion-input>
+        <ion-input
+          type="text"
+          fill="solid"
+          label="Ingrese su nombre completo"
+          labelPlacement="floating"
+          errorText="Nombre no válido"
+          helperText="Máximo 50 carácteres."
+          maxlength="50"
+          [counter]="true"
+          [(ngModel)]="userData.first_name"
+        ></ion-input>
+  
+        <ion-input
+          type="number"
+          fill="solid"
+          label="Ingrese su número"
+          labelPlacement="floating"
+          errorText="Número no válido"
+          [(ngModel)]="userData.telefono"
+        ></ion-input>
+  
+        <ion-input
+          type="password"
+          fill="solid"
+          label="Contraseña"
+          labelPlacement="floating"
+          errorText="Las contraseñas no coinciden"
+        ></ion-input>
+  
+        <ion-input
+          type="password"
+          fill="solid"
+          label="Confirme su contraseña"
+          labelPlacement="floating"
+          errorText="Las contraseñas no coinciden"
+          [(ngModel)]="userData.password"
+        ></ion-input>
+        <ion-button (click)="createUser()">REGISTRARSE</ion-button>
+  
+        <ion-button [routerLink]="['/login']">CANCELAR</ion-button>
+      </div>
+    </div>
+  </ion-content>
+  <ion-footer>
+    <ion-toolbar class="footer">
+      <p class="ion-text-center">Nicolás Muñoz || Néstor Carvacho</p>
+    </ion-toolbar>
+  </ion-footer>
+  

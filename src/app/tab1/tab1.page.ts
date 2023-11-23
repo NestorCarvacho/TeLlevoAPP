@@ -19,7 +19,6 @@ export class Tab1Page {
   lng: number = -70.5782624941369;
   
   
-  
   public popUp = new mapboxgl.Popup().setHTML("<p>tu ubicacion!</p>");
   // ubicacion: { latitude: number, longitude: number } | null = null;
   
