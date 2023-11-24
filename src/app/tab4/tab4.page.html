@@ -61,9 +61,9 @@
     <div class="container">
         <div class="img__profile">
             <img [routerLink]="['/tabs/tab3']" [src]="getImagenPerfil()"/>
-            <div class="name">{{ usuarios?.nombre_completo}}</div>
+            
         </div>
-
+        <span class="name">{{ usuarios?.nombre_completo}}</span>
         <div class="item">
             <ion-icon name="person-outline" size="large"></ion-icon>
             <span>Mi Perfil</span>

@@ -18,19 +18,19 @@
 
 //////////////////////////////////////
 
-:root {
+ion-content {
     
     /* Colores */
     --text-color: #011341;
     --gray-color: #828282;
     --icon-color: #5D83EF;
-    --container-color: #FBFCFF;
+    --background: linear-gradient(to bottom, #87CEEB, #ffffff);
 
     /* Typography */
     --body-font: 'Poppins';
 }
 
-body, html {
+.container {
     height: 100%;
     margin: 0;
     font-family: var(--body-font);
@@ -53,7 +53,7 @@ body, html {
 .img__profile {
     display: grid;
     position: relative;
-    margin: auto;
+    //margin: auto;
 }
 
 .img__profile img {

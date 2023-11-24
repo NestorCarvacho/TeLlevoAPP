@@ -78,22 +78,22 @@
 // ///////////////////
 
 
-:root {
+ion-content {
     
   /* Colores */
   --text-color: #011341;
   --gray-color: #828282;
   --icon-color: #5D83EF;
-  --container-color: #FBFCFF;
+  --background: linear-gradient(to bottom, #87CEEB, #ffffff);
 
   /* Typography */
-  --body-font: 'Poppins';
+  --font: 'Poppins';
 }
 
-body, html {
+.container {
   height: 100%;
   margin: 0;
-  font-family: var(--body-font);
+  font-family: var(--font);
   background-color: var(--container-color);
 }
 
