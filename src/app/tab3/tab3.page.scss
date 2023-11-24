@@ -202,3 +202,14 @@ ion-content {
       margin-top: 0;
   }
 }
+
+.container{
+  text-align: center;
+  background: rgba(255, 255, 255, 0.8); // Fondo blanco medio transparente
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  margin: auto;
+  margin-top: 50px;
+  align-items: justify;
+}
