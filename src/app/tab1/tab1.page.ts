@@ -1,4 +1,10 @@
+<<<<<<< Updated upstream
 import { Component, AfterViewInit } from '@angular/core';
+=======
+// import { Tab1Page } from './tab1.page';
+import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+import { environment } from 'src/environments/environment';
+>>>>>>> Stashed changes
 import * as mapboxgl from 'mapbox-gl';
 import { environment } from 'src/environments/environment';
 
