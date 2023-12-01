@@ -37,13 +37,13 @@
               </ion-buttons>
             </ion-toolbar>
           </ion-header>
-          <ion-content>
+          <ion-content class="modalViajes">
             <ion-list>
-              <ion-item *ngFor="let ruta of rutas; let i = index">
+              <li *ngFor="let ruta of rutas; let i = index">
                 <a type="btn" (click)="ir(i)" (click)="modal.dismiss()"
                   >{{ ruta }}</a
                 >
-              </ion-item>
+              </li>
             </ion-list>
           </ion-content>
         </ng-template>
