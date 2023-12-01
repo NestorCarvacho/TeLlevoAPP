@@ -58,4 +58,9 @@
   <div class="container">
     <div id="mapbox"></div>
   </div>
+  <div *ngIf="rutas.length > 0" class="tomar-viaje-container">
+    <ion-button (click)="tomarViaje()" id="tomar-viaje-btn">
+      Tomar viaje
+    </ion-button>
+  </div>
 </ion-content>

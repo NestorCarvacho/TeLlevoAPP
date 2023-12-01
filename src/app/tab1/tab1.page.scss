@@ -95,4 +95,13 @@ ion-header {
   margin-bottom: 5px;
 }
 
-//localhost:8100/tabs/tab1
+#tomar-viaje-btn {
+  position: fixed; /* Hace que el botón sea flotante */
+  top: 90%; /* Centra el botón verticalmente */
+  left: 50%; /* Centra el botón horizontalmente */
+  transform: translate(-50%, -50%); /* Ajusta la posición del botón para que esté perfectamente centrado */
+  z-index: 999; /* Asegura que el botón esté por encima de otros elementos */
+  width: 80%; /* Ajusta este valor para cambiar el ancho del botón */
+  max-width: 600px; /* Ajusta este valor para establecer el ancho máximo del botón */
+}
+

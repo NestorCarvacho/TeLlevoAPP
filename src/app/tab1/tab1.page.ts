@@ -77,9 +77,11 @@ import { getElement } from 'ionicons/dist/types/stencil-public-runtime';
   styleUrls: ['tab1.page.scss'],
 })
 export class Tab1Page implements AfterViewInit {
+  imprimirCoordenadas: () => void;
   constructor() {}
   ngAfterViewInit() {
     this.constriurMapa();
+    let imprimirCoordenadas: () => void;
   }
 
   lngFin: number = 0;
@@ -91,11 +93,14 @@ export class Tab1Page implements AfterViewInit {
   // direccion del Duoc
   lat: number = -33.59813725425291;
   lng: number = -70.5782624941369;
+  
+  
 
   ir(index: number) {
     const rutaSeleccionada = this.rutas[index];
     console.log('esta es la ruta seleccionada: '+ rutaSeleccionada);
 
+    
 
     var duoc = [-70.57902808465514, -33.59778231829415];
     var map = new mapboxgl.Map({
@@ -106,14 +111,18 @@ export class Tab1Page implements AfterViewInit {
       zoom: 13,
     });
 
-    var startPoint = [-74.5, 40]; // Coordenadas del punto de inicio
+    let startPoint = [-74.5, 40]; // Coordenadas del punto de inicio
 
-    var endPoint = [-74.45, 40.1]; // Coordenadas del punto de destino
+    let endPoint = [-74.45, 40.1]; // Coordenadas del punto de destino
     
 
     startPoint = duoc;
     endPoint = [this.lngFin, this.latFin];
     console.log(endPoint);
+    this.imprimirCoordenadas = () => {
+      console.log([endPoint[0], endPoint[1]]);
+    };
+    
     var marker = new mapboxgl.Marker().setLngLat([duoc[0], duoc[1]]).addTo(map);
     var marker2 = new mapboxgl.Marker()
       .setLngLat([endPoint[0], endPoint[1]])
@@ -125,7 +134,7 @@ export class Tab1Page implements AfterViewInit {
       .then((response) => response.json())
       .then((data) => {
         var route = data.routes[0].geometry;
-
+        
         // Añade la ruta al mapa
         map.on('load', function () {
           map.addLayer({
@@ -158,9 +167,11 @@ export class Tab1Page implements AfterViewInit {
   direccion: string = '';
 
   rutas: string[] = [];
-
+  
+  
   buscar() {
     this.rutas = [];
+    
 
     fetch(
       `https://api.mapbox.com/geocoding/v5/mapbox.places/${this.direccion}.json?access_token=${environment.mapboxKey}`
@@ -184,12 +195,30 @@ export class Tab1Page implements AfterViewInit {
           const lng = route['features'][index]['center'][0];
           const lat = route['features'][index]['center'][1];
           console.log(index + 1 + ') Lng:' + lng + ' Lat:' + lat);
+          this.mostrarBotonTomarViaje();
+          
         }
       })
       .catch((error) => {
         console.log(error);
       });
   }
+
+  tomarViaje() {
+    console.log('Viaje tomado!');
+    this.imprimirCoordenadas();
+  }
+
+  mostrarBotonTomarViaje() {
+    // Verificar si hay al menos una ruta encontrada
+    if (this.rutas.length > 0) {
+      const botonTomarViaje = document.createElement('button');
+      botonTomarViaje.innerText = 'Tomar viaje';
+      botonTomarViaje.addEventListener('click', this.tomarViaje.bind(this));
+      document.body.appendChild(botonTomarViaje);
+    }
+  }
+
 
   constriurMapa() {
     this.mapa = new mapboxgl.Map({
