@@ -1,37 +1,146 @@
-<ion-header>
+<ion-header style="background: linear-gradient(to bottom, #87ceeb, #ffffff)">
     <ion-item>
-        <a [routerLink]="['/tabs/tab4']" class="linkBack">
-          <h4><ion-icon name="arrow-back-outline"></ion-icon> Ingresar vehículo</h4></a>
-      </ion-item>
-</ion-header>
-
-<ion-content>
-    <form (ngSubmit)="crearVehiculo(vehiculoData)">
-        <ion-item>
-            <ion-label position="floating">Patente</ion-label>
-            <ion-input [(ngModel)]="vehiculoData.patente" id="patente" name="patente" required="required"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label position="floating">Marca</ion-label>
-          <ion-input id="marca" [(ngModel)]="vehiculoData.marca" name="marca" required="required"></ion-input>
-      </ion-item>
-        <ion-item>
-            <ion-label position="floating">Modelo</ion-label>
-            <ion-input id="modelo" [(ngModel)]="vehiculoData.modelo" name="modelo" required="required"></ion-input>
-        </ion-item>
-        <ion-item>
-            <ion-label position="stacked">Permiso de Circulación</ion-label>
-            <ion-input class="seleccion-archivo" type="file" (change)="onFileSelected($event)" required="required"></ion-input>
-        </ion-item>
-
-        <ion-item>
-            <ion-label position="stacked">Seguro Obligatorio</ion-label>
-            <ion-input class="seleccion-archivo" type="file" (change)="onFileSelected($event)" required="required"></ion-input>
-        </ion-item>
-        <ion-item>
-            <ion-label position="stacked">Certificado de Antecedentes</ion-label>
-            <ion-input class="seleccion-archivo" type="file" (change)="onFileSelected($event)" required="required"></ion-input>
-        </ion-item>
-        <ion-button type="submit" expand="full" (click)="sincronizar()">Guardar</ion-button>
-    </form>
-</ion-content>
+      <a [routerLink]="['/tabs/tab4']" class="linkBack">
+        <h4>
+          <ion-icon name="arrow-back-outline"></ion-icon> Ingresar vehículo
+        </h4></a
+      >
+    </ion-item>
+  </ion-header>
+  
+  <ion-content>
+    <div class="login_content">
+      <div>
+        <form class="formularioLogin" (ngSubmit)="crearVehiculo(vehiculoData)">
+          <ion-input
+            type="text"
+            label="Patente"
+            id="patente" 
+            name="patente"
+            labelPlacement="floating"
+            errorText="Máximo superado"
+            [(ngModel)]="vehiculoData.patente"
+            required="required"
+          ></ion-input>
+          <ion-input
+            type="text"
+            label="marca"
+            name="marca"
+            id="marca"
+            labelPlacement="floating"
+            errorText="Máximo superado"
+            [(ngModel)]="vehiculoData.marca"
+            required="required"
+          ></ion-input>
+          <ion-input
+            type="text"
+            label="modelo"
+            id="modelo"
+            name="modelo"
+            labelPlacement="floating"
+            errorText="Máximo superado"
+            [(ngModel)]="vehiculoData.modelo"
+          ></ion-input>
+          <ion-label>Permiso de Circulación</ion-label>
+          <ion-input
+            type="file"
+            errorText="Máximo superado"
+            (change)="onFileSelected($event)"
+            required="required"
+            class="seleccion-archivo"
+          ></ion-input>
+          <ion-label>Seguro Obligatorio</ion-label>
+          <ion-input
+            type="file"
+            (change)="onFileSelected($event)"
+            required="required"
+            class="seleccion-archivo"
+          ></ion-input>
+          <ion-label>Certificado de Antecedentes</ion-label>
+          <ion-input
+          type="file"
+          (change)="onFileSelected($event)"
+          required="required"
+          class="seleccion-archivo"
+        ></ion-input>
+          <ion-button type="submit" expand="full" (click)="sincronizar()"
+            >Guardar</ion-button
+          >
+        </form>
+      </div>
+    </div>
+  </ion-content>
+  
+  <!--     <div class="login_content">
+      <div >
+        <h1 class="ion-text-center">
+          <img
+            src="../../assets/core/img/logoApp.png"
+            style="height: 150px; width: 150px"
+          />
+        </h1>
+        <h3
+          style="
+            color: rgb(0, 0, 107);
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial,
+              sans-serif;
+          "
+        >
+          REGISTRATE
+        </h3>
+  
+          <ion-input
+            type="email"
+            label="Correo electrónico"
+            labelPlacement="floating"
+            helperText="Máximo 80 carácteres."
+            errorText="Máximo superado"
+            maxlength="80"
+            [counter]="true"
+            [(ngModel)]="userData.email"
+            [(ngModel)]="userData.username"
+          ></ion-input>
+          <hr>
+  
+          <ion-input
+            type="text"
+            label="Ingrese su nombre completo"
+            labelPlacement="floating"
+            errorText="Nombre no válido"
+            helperText="Máximo 50 carácteres."
+            maxlength="50"
+            [counter]="true"
+            [(ngModel)]="userData.first_name"
+          ></ion-input>
+          <hr>
+  
+          <ion-input
+            type="number"
+            label="Ingrese su número"
+            labelPlacement="floating"
+            errorText="Número no válido"
+            [(ngModel)]="userData.telefono"
+          ></ion-input>
+          <hr>
+  
+          <ion-input
+            type="password"
+            label="Contraseña"
+            labelPlacement="floating"
+            errorText="Las contraseñas no coinciden"
+          ></ion-input>
+          <hr>
+  
+          <ion-input
+            type="password"
+            label="Confirme su contraseña"
+            labelPlacement="floating"
+            errorText="Las contraseñas no coinciden"
+            [(ngModel)]="userData.password"
+          ></ion-input>
+        </div>
+        <ion-button (click)="createUser()" expand="block" color="primary">REGISTRARSE</ion-button>
+  
+        <ion-button [routerLink]="['/login']" expand="block" color="warning">CANCELAR</ion-button>
+      </div> -->
+  

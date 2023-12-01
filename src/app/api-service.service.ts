@@ -75,4 +75,13 @@ export class ApiServiceService {
     return this.http.patch(url, data);
   }
 
+  createViaje(userData: any){
+    return this.http.post<any>('https://necarvacho.pythonanywhere.com/api/viaje/',userData);
+  }
+
+  getViajebyid(viajeID: number){
+    const url = `${this.apiUrl}api/viaje/${viajeID}/`;
+    return this.http.get(url);
+  }
+
 }

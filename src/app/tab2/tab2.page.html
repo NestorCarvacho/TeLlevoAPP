@@ -18,25 +18,25 @@
                 <div class="container">
                     <div class="row">
                         <div class="col col-6 nombreAppCard">Te Llevo</div>
-                        <div class="col col-6 fechaCard">Fecha</div>
+                        <div class="col col-6 fechaCard">Viaje de te llevo</div>
                         <div class="col col-12">
                             <div class="row">
                                 <div class="col col-2">
                                     <div id="puntoViaje"></div>
                                     <div id="puntoViaje2"></div>
                                 </div>
-                                <div class="col col-10 DireccionCard">{{ viaje.inicio_viaje }}
+                                <div class="col col-10 DireccionCard">Viaje numero: {{ viaje.id }}
 
                                 </div>
                                 <div class="col col-2">
                                     <div id="puntoViaje3"></div>
                                 </div>
-                                <div class="col col-10 DireccionCard">{{ viaje.destino_viaje }}
+                                <div class="col col-10 DireccionCard">Conducido por: {{ viaje.conductor.nombre_completo }}
                                 </div>
                             </div>
                         </div>
                         <div class="col col-12">
-                            <a [routerLink]="['/tabs/tab2/detalle-viajes']" class="btn btn-primary botonDetalles">Ver detalles</a>
+                            <a class="btn btn-primary botonDetalles" (click)="verDetalles(viaje.id)">Ver detalles</a>
                         </div>
                     </div>
                 </div>

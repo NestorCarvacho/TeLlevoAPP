@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiServiceService } from '../api-service.service';
+import { Router } from '@angular/router';
+import { DatosViajeService } from '../datos-viaje.service';
 
 @Component({
   selector: 'app-tab2',
@@ -8,12 +10,16 @@ import { ApiServiceService } from '../api-service.service';
 })
 export class Tab2Page implements OnInit{
 
-  viajes: any;
+  viajes: any = [];
   
-  constructor(private apiService: ApiServiceService) {
+  constructor(private apiService: ApiServiceService, private router: Router, private datosViaje: DatosViajeService) {
   }
 
   ngOnInit() {
+    this.obtenerViajes();
+  }
+
+  ngOnInitAfterView(){
     this.obtenerViajes();
   }
   
@@ -28,4 +34,15 @@ export class Tab2Page implements OnInit{
     );
   }
 
+  verDetalles(idViaje: number) {
+    this.apiService.getViajebyid(idViaje).subscribe(
+      async (data) =>{
+        this.datosViaje.setViajeData(data);
+        this.router.navigate(['/tabs/tab2/detalle-viajes']);
+      },
+      (error) =>{
+        console.error('Error al obtener viaje:', error);
+      }
+    );
+  }
 }

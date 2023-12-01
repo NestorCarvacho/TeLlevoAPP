@@ -61,15 +61,14 @@
 
 import * as mapboxgl from 'mapbox-gl';
 import { environment } from 'src/environments/environment';
+import { Storage } from '@ionic/storage-angular';
+import { ApiServiceService } from '../api-service.service';
 
 import {
   Component,
   AfterViewInit,
-  Input,
-  ViewChild,
-  ElementRef,
 } from '@angular/core';
-import { getElement } from 'ionicons/dist/types/stencil-public-runtime';
+
 
 @Component({
   selector: 'app-tab1',
@@ -77,11 +76,12 @@ import { getElement } from 'ionicons/dist/types/stencil-public-runtime';
   styleUrls: ['tab1.page.scss'],
 })
 export class Tab1Page implements AfterViewInit {
-  imprimirCoordenadas: () => void;
-  constructor() {}
+  imprimirCoordenadas: () => [number, number];
+  
+  constructor(private apiService: ApiServiceService, private storage: Storage) {}
   ngAfterViewInit() {
     this.constriurMapa();
-    let imprimirCoordenadas: () => void;
+    
   }
 
   lngFin: number = 0;
@@ -119,8 +119,8 @@ export class Tab1Page implements AfterViewInit {
     startPoint = duoc;
     endPoint = [this.lngFin, this.latFin];
     console.log(endPoint);
-    this.imprimirCoordenadas = () => {
-      console.log([endPoint[0], endPoint[1]]);
+    this.imprimirCoordenadas = (): [number, number] => {
+      return [endPoint[0], endPoint[1]];
     };
     
     var marker = new mapboxgl.Marker().setLngLat([duoc[0], duoc[1]]).addTo(map);
@@ -203,10 +203,45 @@ export class Tab1Page implements AfterViewInit {
         console.log(error);
       });
   }
-
+  
+  
+  viajeData: any;
+  
+  
   tomarViaje() {
-    console.log('Viaje tomado!');
-    this.imprimirCoordenadas();
+    const data: [number, number] = this.imprimirCoordenadas();
+    var longitud = data[0];
+    var latitud = data[1];
+    this.storage.get('user_id').then(
+      async (userId: number | null) => {
+        if (userId !== null) {
+          this.apiService.getConductorById(userId).subscribe(
+          );
+          this.viajeData ={
+            inicio_lat: -33.59778231829415,
+            inicio_lon: -70.57902808465514,
+            destino_lat: latitud,
+            destino_lon : longitud,
+            tarifa: 1000,
+            metodo_pago: "efectivo",
+            usuario_viaje: userId,
+            conductor: userId
+          }
+          this.apiService.createViaje(this.viajeData).subscribe(
+            (response) => {
+              //this.router.navigate(['login/registro-exitoso']);
+              console.log("Guardado correctamente:" + response)
+            },
+            (error) => {
+              console.log("error: " + error)
+            }
+          );
+        } else {
+          console.error('No se pudo obtener el conductor de la sesión.');
+        }
+      },
+    );
+    
   }
 
   mostrarBotonTomarViaje() {
