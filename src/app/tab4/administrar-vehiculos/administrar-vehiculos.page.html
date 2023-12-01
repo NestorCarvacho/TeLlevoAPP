@@ -2,34 +2,43 @@
   <ion-toolbar>
     <ion-item>
       <a [routerLink]="['/tabs/tab4']" class="linkBack">
-        <h4><ion-icon name="arrow-back-outline"></ion-icon> Administrar vehículos</h4></a>
+        <h4>
+          <ion-icon name="arrow-back-outline"></ion-icon> Administrar vehículos
+        </h4>
+      </a>
     </ion-item>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-item>
-      Selecciona tu vehiculo
-  </ion-item>
-  <ion-item *ngFor="let vehiculo of vehiculos">
-      <ion-card>
-          <div class="CardVehiculo" [ngClass]="{ 'selected-card': isSelected }" (click)="toggleSelection()">
-              <ion-input label="Patente" fill="outline" placeholder="{{ vehiculo.patente }}" disabled="true"></ion-input>
-              <ion-input label="Marca" fill="outline" placeholder="{{ vehiculo.marca }}" disabled="true"></ion-input>
-              <ion-input label="Modelo" fill="outline" placeholder="{{ vehiculo.modelo }}" disabled="true"></ion-input>
-              <div>
-                <br>
-                <a [routerLink]="['/tab4/administar-vehiculos']"><ion-icon name="create-outline"></ion-icon> Editar Vehiculo</a>
-              </div>
-          </div>
-      </ion-card>
-  </ion-item>
-  <ion-item>
-      <ion-card>
-          <div class="CardVehiculo">
-              <ion-icon name="add-circle-outline"></ion-icon>
-              <h3><a [routerLink]="['/tabs/tab4/agregar-vehiculo']">Agregar nuevo vehiculo</a></h3>
-          </div>
-      </ion-card>
-  </ion-item>
+  <h2 style="color: rgba(15, 2, 138, 0.877); text-align: center">Selecciona tu vehiculo</h2>
+
+  <ion-card color="light" *ngFor="let vehiculo of vehiculos">
+    <ion-card-header>
+      <ion-card-title>Patente: {{ vehiculo.patente }}</ion-card-title>
+      <ion-card-subtitle>Marca: {{ vehiculo.marca }}</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>Modelo: {{ vehiculo.modelo }}</ion-card-content>
+
+    <ion-button expand="block" [routerLink]="['/tab4/administar-vehiculos']" style="padding: 8px; font-size: 14px;">
+      <ion-icon name="create-outline" style="font-size: 18px;"></ion-icon> Editar Vehiculo
+    </ion-button>
+    
+    <ion-button expand="block" [routerLink]="['/tab4/administar-vehiculos']" style="padding: 8px; font-size: 14px;">
+      <ion-icon name="trash-outline" style="font-size: 18px;"></ion-icon> Eliminar Vehiculo
+    </ion-button>
+    
+  </ion-card>
+  <hr />
+  <hr />
+  <div style="text-align: center;">
+    <ion-button [routerLink]="['/tabs/tab4/agregar-vehiculo']">
+      <ion-icon name="add-circle-outline"></ion-icon>Agregar nuevo vehiculo
+    </ion-button>
+  </div>
+  <hr />
+  <hr />
+  <hr />
+  <hr />
 </ion-content>
