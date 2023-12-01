@@ -1,60 +1,53 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-item>
+            <a [routerLink]="['/tabs/tab4']" class="linkBack">
+              <h4><ion-icon name="arrow-back-outline"></ion-icon> Información de la cuenta</h4></a>
+          </ion-item>
+    </ion-toolbar>
+</ion-header>
+
 <ion-content [fullscreen]="true">
-  <div class="container">
-    <div class="img__profile">
-      <img [routerLink]="['/tabs/tab3']" [src]="getImagenPerfil()" />
-      <ion-fab style="position: relative; margin: auto">
-        <ion-fab-button (click)="selectFile()">
-          <ion-icon name="add"></ion-icon>
-        </ion-fab-button>
-      </ion-fab>
-    </div>
-    <div>
-      <ion-list-header class="informacion-basica">
-        <span style="font-size: large; color:#011341">Información básica</span>
-      </ion-list-header>
-    </div>
-
-    <div class="item">
-      <ion-icon name="person-outline" size="large"></ion-icon>
-      <span>Nombre Usuario</span>
-      <div class="icon">
-        <ion-icon name="settings-outline" [routerLink]="['/tabs/tab3/editar-nombre']"></ion-icon>
-      </div>
-      <div></div>
-      <span>{{ nuevoNombre || conductor?.nombre_completo}}</span>
-      <div></div>
-    </div>
-
-    <div class="item">
-      <ion-icon name="person-outline" size="large"></ion-icon>
-      <span>Telefono</span>
-      <div class="icon">
-        <ion-icon name="settings-outline" [routerLink]="['/tabs/tab3/editar-numero']" ></ion-icon>
-      </div>
-      <div></div>
-      <span>+56 {{ nuevoNumero || conductor?.numero_telefono }}</span>
-      <div></div>
-    </div>
-
-    <div class="item">
-      <ion-icon name="person-outline" size="large"></ion-icon>
-      <span>Correo Electronico</span>
-      <div></div>
-      <div></div>
-      <span>{{ conductor?.correo_electronico }}</span>
-      <div class="icon">
-        <div></div>
-      </div>
-    </div>
-    <div class="item" detail="true" [routerLink]="['/tabs/tab2']">
-      <ion-icon name="person-outline" size="large"></ion-icon>
-      <span>Viajes</span>
-      <div></div>
-      <div></div>
-      <span
-        >Has realizado {{ conductor?.viajes_realizados }} viajes en total.</span>
-      <div></div>
-    </div>
-  </div>
-  <hr><hr><hr>
+    <section>
+        <ion-item>
+            <ion-avatar slot="start" class="foto-avatar">
+                <ion-fab>
+                <ion-fab-button (click)="selectFile()">
+                        <ion-icon name="add"></ion-icon>
+                </ion-fab-button>
+                </ion-fab>
+                <img alt="Silhouette of a person's head" [src]="getImagenPerfil()"/>
+            </ion-avatar>
+            <input type="file" #fileInput style="display:none" (change)="cargarNuevaImagen($event)">
+        </ion-item>
+        <ion-item>
+            <ion-list-header class="informacion-basica">
+                <ion-label>Información básica</ion-label>
+            </ion-list-header>
+        </ion-item>
+        <ion-item detail="true">
+            <ion-label [routerLink]="['/tabs/tab3/editar-nombre']"> 
+                <h3>Nombre</h3>
+                <p>{{ nuevoNombre || conductor?.nombre_completo}}</p>
+            </ion-label>
+        </ion-item>
+        <ion-item detail="true">
+            <ion-label [routerLink]="['/tabs/tab3/editar-numero']" >
+                <h3>Número de teléfono</h3>
+                <p>{{  nuevoNumero || conductor?.numero_telefono }}</p>
+            </ion-label>
+        </ion-item>
+        <ion-item detail="true" [routerLink]="['/tabs/tab3/editar-correo']">
+            <ion-label>
+                <h3>Correo electrónico</h3>
+                <p>{{ conductor?.correo_electronico }}</p>
+            </ion-label>
+        </ion-item>
+        <ion-item detail="true" [routerLink]="['/tabs/tab2']">
+            <ion-label>
+                <h3>Viajes realizados</h3>
+                <p>Has realizado {{ conductor?.viajes_realizados }} viajes en total.</p>
+            </ion-label>
+        </ion-item>
+    </section>
 </ion-content>

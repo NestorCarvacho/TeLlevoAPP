@@ -1,51 +1,54 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-item>
+            <ion-avatar slot="start">
+                <img [routerLink]="['/tabs/tab3']" alt="Silhouette of a person's head" [src]="getImagenPerfil()"/>
+            </ion-avatar>
+            <ion-label>{{ usuarios?.username }}</ion-label>
+        </ion-item>
+    </ion-toolbar>
+</ion-header>
+
 <ion-content [fullscreen]="true">
-  <div class="container">
-    <div class="bg">
-      <img src="../assets/core/img/background-profile.png" alt="bg" />
-    </div>
-    <div class="img__profile">
-      <img [routerLink]="['/tabs/tab3']" [src]="getImagenPerfil()" />
-    </div>
-    <span class="name">{{ usuarios?.nombre_completo}}</span>
-    <div class="item">
-      <ion-icon name="person-outline" size="large"></ion-icon>
-      <span>Mi Perfil</span>
-      <div class="icon">
-        <ion-icon
-          name="chevron-forward-outline"
-          [routerLink]="['/tabs/tab3']"
-        ></ion-icon>
-      </div>
-    </div>
-    <div class="item">
-      <ion-icon name="car-outline" size="large"></ion-icon>
-      <span>Administrar vehículos</span>
-      <div class="icon">
-        <ion-icon
-          name="chevron-forward-outline"
-          [routerLink]="['/tabs/tab4/administrar-vehiculos']"
-        ></ion-icon>
-      </div>
-    </div>
-    <div class="item">
-      <ion-icon name="information-outline" size="large"></ion-icon>
-      <span>Términos y servicios</span>
-      <div class="icon">
-        <ion-icon
-          name="chevron-forward-outline"
-          [routerLink]="['/tabs/tab4/terminosyservicios']"
-        ></ion-icon>
-      </div>
-    </div>
-    <div class="item">
-      <ion-icon name="log-out-outline" size="large"></ion-icon>
-      <span>Cerrar Sesion</span>
-      <div class="icon">
-        <ion-icon
-          name="chevron-forward-outline"
-          [routerLink]="['/login']"
-        ></ion-icon>
-      </div>
-    </div>
-  </div>
+    <ion-list lines="none">
+        <ion-item class="boton-perfil">
+            <ion-icon name="ellipsis-horizontal-circle-outline" style="padding: 2%;"></ion-icon>
+            <ion-label [routerLink]="['/tabs/tab4/configuracion']">
+                Configuración</ion-label>
+        </ion-item>
+        <ion-item class="boton-perfil">
+            <ion-icon name="settings-outline" style="padding: 2%;"></ion-icon>
+            <ion-label [routerLink]="['/tabs/tab3']">
+                Administrar cuenta</ion-label>
+        </ion-item>
+        <ion-item class="boton-perfil">
+            <ion-icon name="car-outline" style="padding: 2%;"></ion-icon>
+            <ion-label [routerLink]="['/tabs/tab4/administrar-vehiculos']">
+                Administrar vehículos</ion-label>
+        </ion-item>
+        <ion-item class="boton-perfil">
+            <ion-icon name="information-outline" style="padding: 2%;"></ion-icon>
+            <ion-label [routerLink]="['/tabs/tab4/terminosyservicios']">
+                Términos y servicios</ion-label>
+        </ion-item>
+        <ion-item class="boton-perfil">
+            <ion-icon name="shield-checkmark-outline" style="padding: 2%;"></ion-icon>
+            <ion-label [routerLink]="['/tabs/tab4/ayudaviajes']">
+                Ayuda con un viaje</ion-label>
+        </ion-item>
+        <ion-item class="boton-perfil">
+            <ion-icon name="wallet-outline" style="padding: 2%;"></ion-icon>
+            <ion-select justify="space-between" label="Método de pago" placeholder="Eliga su método de pago">
+                <ion-select-option value="Efectivo">Efectivo</ion-select-option>
+                <ion-select-option value="Tarjeta de crédito">Tarjeta de crédito</ion-select-option>
+                <ion-select-option value="Tarjeta de débito">Tarjeta de débito</ion-select-option>
+                <ion-select-option value="Transferencia">Transferencia bancaria</ion-select-option>
+              </ion-select>
+        </ion-item>
+        <ion-item class="boton-perfil">
+            <ion-icon name="exit-outline" style="padding: 2%;"></ion-icon>
+            <ion-label [routerLink]="['/login']">
+                Cerrar Sesion</ion-label>
+        </ion-item>
+    </ion-list>
 </ion-content>
