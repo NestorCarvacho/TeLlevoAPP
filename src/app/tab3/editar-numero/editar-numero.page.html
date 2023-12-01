@@ -1,4 +1,4 @@
-<ion-header [translucent]="true">
+<!-- <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-item>
       <a [routerLink]="['/tabs/tab3']" class="linkBack">
@@ -32,4 +32,31 @@
 </div>
 
 
+</ion-content> -->
+
+
+
+
+
+<ion-content>
+  <div class="sign_in_page_wrap">
+    <div class="login_content">
+        <h2 style="color: black;"><ion-icon name="create-outline"></ion-icon> Editar número de télefono</h2>
+        <hr>
+        <ion-input
+        type="text"
+        label="Número"
+        labelPlacement="floating"
+        helperText="Máximo 12 carácteres."
+        errorText="Máximo superado"
+        maxlength="12"
+        [counter]="true"
+        [(ngModel)]="nuevoNumero"
+      ></ion-input>
+      <div class="ion-text-center">
+        <ion-button shape="round" color="warning" (click)="actualizarNumero()" type="submit">Confirmar</ion-button>
+        <ion-button shape="round" color="danger" [routerLink]="['/tabs/tab3']">Cancelar</ion-button>
+      </div>
+    </div>
+  </div>
 </ion-content>

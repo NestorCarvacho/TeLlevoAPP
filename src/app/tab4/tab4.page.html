@@ -1,10 +1,10 @@
-<ion-header [translucent]="true">
+<!-- <ion-header [translucent]="true">
     <ion-toolbar>
         <ion-item>
             <ion-avatar slot="start">
                 <img [routerLink]="['/tabs/tab3']" alt="Silhouette of a person's head" [src]="getImagenPerfil()"/>
             </ion-avatar>
-            <ion-label>{{ usuarios?.username }}</ion-label>
+            <ion-label>{{ usuarios.username }}</ion-label>
         </ion-item>
     </ion-toolbar>
 </ion-header>
@@ -51,4 +51,47 @@
                 Cerrar Sesion</ion-label>
         </ion-item>
     </ion-list>
+</ion-content> -->
+
+<ion-content [fullscreen]="true">
+
+
+    <div class="container">
+        <div class="bg">
+            <img src="../assets/core/img/background-profile.png" alt="bg">
+        </div>
+        <div class="img__profile">
+            <img [routerLink]="['/tabs/tab3']" [src]="getImagenPerfil()"/>
+            
+        </div>
+        <span class="name">{{ usuarios?.nombre_completo}}</span>
+        <div class="item">
+            <ion-icon name="person-outline" size="large"></ion-icon>
+            <span>Mi Perfil</span>
+            <div class="icon">
+                <ion-icon name="chevron-forward-outline" [routerLink]="['/tabs/tab3']"></ion-icon>
+            </div>
+        </div>
+        <div class="item">
+            <ion-icon name="car-outline" size="large"></ion-icon>
+            <span>Administrar vehículos</span>
+            <div class="icon">
+                <ion-icon name="chevron-forward-outline" [routerLink]="['/tabs/tab4/administrar-vehiculos']"></ion-icon>
+            </div>
+        </div>
+        <div class="item">
+            <ion-icon name="information-outline" size="large"></ion-icon>
+            <span>Términos y servicios</span>
+            <div class="icon">
+                <ion-icon name="chevron-forward-outline" [routerLink]="['/tabs/tab4/terminosyservicios']"></ion-icon>
+            </div>
+        </div>
+        <div class="item">
+            <ion-icon name="log-out-outline" size="large"></ion-icon>
+            <span>Cerrar Sesion</span>
+            <div class="icon" >
+                <ion-icon name="chevron-forward-outline" [routerLink]="['/login']"></ion-icon>
+            </div>
+        </div>
+    </div>
 </ion-content>

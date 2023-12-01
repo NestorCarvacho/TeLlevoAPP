@@ -1,4 +1,4 @@
-<ion-header [translucent]="true">
+<!-- <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-item>
       <a [routerLink]="['/tabs/tab3']" class="linkBack">
@@ -32,4 +32,31 @@
 </div>
 
 
+</ion-content> -->
+
+<ion-content>
+  <div class="sign_in_page_wrap">
+    <div class="login_content">
+        <h2 style="color: black;"><ion-icon name="create-outline"></ion-icon> Editar Nombre</h2>
+        <hr>
+        <ion-input
+          type="input"
+          label="Nombre"
+          labelPlacement="floating"
+          helperText="Máximo 50 carácteres."
+          errorText="Máximo superado"
+          maxlength="50"
+          [counter]="true"
+          [(ngModel)]="nuevoNombre"
+        ></ion-input>
+      <div class="ion-text-center">
+        <ion-button shape="round" color="warning" (click)="actualizarNombre()"
+          >Confirmar</ion-button
+        >
+        <ion-button shape="round" color="danger" [routerLink]="['/tabs/tab3']"
+          >Cancelar</ion-button
+        >
+      </div>
+    </div>
+  </div>
 </ion-content>
